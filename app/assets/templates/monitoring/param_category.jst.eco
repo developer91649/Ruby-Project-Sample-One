@@ -1,0 +1,5 @@
+<div class='dontsplit'>
+  <h5><%= @name %></h5>
+  <ul data-category='<%= @value %>'>
+  </ul>
+</div>

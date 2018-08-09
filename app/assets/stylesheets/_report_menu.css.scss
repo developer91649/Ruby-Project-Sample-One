@@ -1,0 +1,609 @@
+#reports-column {
+  .italic {
+    font-style: italic;
+    color: rgb(66, 136, 175);
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(66, 136, 175); 
+  }
+}
+.reports-row {
+  width: 464px;
+  margin: 0 auto;
+  ul {
+    li {
+      list-style: none;
+      a.save_btn {
+        border-radius: 0px!important;
+        border: 1px solid;
+        span {
+          top: 2px;
+        }
+      }
+      a.cancel_btn {
+        color: rgb(173, 173, 173)!important;
+        span {
+          top: 2px;
+        }
+      }
+    }
+  }
+  ul.button-set {
+    border-bottom: 1px solid rgb(155, 155, 155);
+    padding-bottom: 30px;
+
+    li {
+      list-style: none;
+      height: 30px;
+      padding-top: 15px;
+      padding-bottom: 40px;
+      &:first-child {
+        border-bottom: 2px solid #000;
+      }
+      span {
+        font-weight: bold;
+      }
+    }
+    li.fleet_report_i {
+      padding-top: 30px;
+    }
+    li.excess_idle_report_i {
+      span {
+        padding-left: 7px;
+        font-weight: bold;
+      }
+      .select-list {
+        padding-right: 7px;
+        .show-tick {
+          .dropdown-toggle {
+            span.filter-option {
+              padding-left: 0px!important;
+            }
+          }
+        }
+      }
+    }
+    li.reli_report_i {
+      span {
+      padding-left: 16px;
+      font-weight: bold;
+      }
+      .select-list {
+        padding-right: 16px;
+        .show-tick {
+          .dropdown-toggle {
+            span.filter-option {
+              padding-left: 0px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.no-padding {
+  padding: 0 0;
+  p {
+    color: rgb(105, 105, 105);
+  }
+}
+.select-list {
+  .show-tick {
+      width: 100%!important;
+      button {
+        background: none;
+        border: none;
+        color: rgb(66, 136, 175);
+        font-size: 16px;
+        font-weight: bold;
+        &:focus {
+          outline: none!important;
+        }
+        &:active {
+          box-shadow: none!important;
+        }
+        .bs-caret {
+          &::before {
+            content: "\e114";
+            font-family: 'Glyphicons Halflings';
+            font-weight: 100;
+          }
+          .caret {
+            display: none;
+            font-weight: 100;
+          }
+        }
+      }
+      .dropdown-menu {
+        li {
+          background: none;
+          box-shadow: none!important;
+          border: none !important;
+          a {
+            font-size: 15px;
+            font-weight: bold;
+            &:hover {
+              background: none!important;
+              color: black!important; 
+            }
+          }
+        }
+        li.selected {
+          a {
+            color: #4288af !important;  
+            font-size: 15px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .btn-group.open {
+      .dropdown-toggle {
+        box-shadow: none;
+        background: none;
+      }
+    }
+}
+.reports_menu {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.row { 
+  .fleet_report_div {
+    padding-top: 30px;
+    border: 1px solid rgb(200, 200, 200);
+    text-align: center;
+    height: 230px;
+    .italic {
+    font-style: italic;
+    color: rgb(66, 136, 175);
+    font-weight: bold;
+    }
+    .fleet_style {
+      font-weight: bold;
+      font-size: 22px;
+      color: rgb(102,102,102);
+    }
+    .fleet_link {
+      font-size: 17px;
+      color: rgb(66,135,175);
+      font-weight: bold;
+      span {
+        top: 2px;
+        font-weight: normal!important;
+      }
+    }
+  }
+  .excess_report_div {
+    padding-top: 30px;
+    border: 1px solid rgb(200, 200, 200);
+    text-align: center;
+    height: 230px;
+    .italic {
+    font-style: italic;
+    color: rgb(66, 136, 175);
+    font-weight: bold;
+    }
+    .excess_report_style {
+      font-weight: bold;
+      font-size: 22px;
+      color: rgb(102,102,102);
+    }
+    .excess_report_link {
+      font-size: 17px;
+      color: rgb(66,135,175);
+      font-weight: bold;
+      span {
+        top: 2px;
+        font-weight: normal!important;
+      }
+    }
+  }
+  .reli_report_div {
+    padding-top: 30px;
+    border: 1px solid rgb(200, 200, 200);
+    text-align: center;
+    height: 230px;
+    .italic {
+    font-style: italic;
+    color: rgb(66, 136, 175);
+    font-weight: bold;
+    }
+    .reli_report_style {
+      font-weight: bold;
+      font-size: 22px;
+      color: rgb(102,102,102);
+    }
+    .reli_report_link {
+      font-size: 17px;
+      color: rgb(66,135,175);
+      font-weight: bold;
+      cursor: pointer;
+      span {
+        top: 2px;
+        font-weight: normal!important;
+        cursor: pointer;
+      }
+    }
+  }
+}
+#reports-column {
+  .italic {
+    font-style: italic;
+    color: rgb(66, 136, 175);
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(66, 136, 175); 
+  }
+}
+.reports-row {
+  width: 464px;
+  margin: 0 auto;
+  ul {
+    li {
+      list-style: none;
+      a.save_btn {
+        border-radius: 0px!important;
+        border: 1px solid;
+        span {
+          top: 2px;
+        }
+      }
+      a.cancel_btn {
+        color: rgb(173, 173, 173)!important;
+        span {
+          top: 2px;
+        }
+      }
+    }
+  }
+  ul.button-set {
+    border-bottom: 1px solid rgb(155, 155, 155);
+    padding-bottom: 30px;
+
+    li {
+      list-style: none;
+      height: 30px;
+      padding-top: 15px;
+      padding-bottom: 40px;
+      &:first-child {
+        border-bottom: 2px solid #000;
+      }
+      span {
+        font-weight: bold;
+      }
+    }
+    li.fleet_report_i {
+      padding-top: 30px;
+      img {
+        width: 45px;
+      }
+      span {
+        padding-left: 7px;
+      }
+    }
+    li.excess_idle_report_i {
+      img {
+        width: 45px;
+      }
+      span {
+        padding-left: 7px;
+        font-weight: bold;
+      }
+      .select-list {
+        padding-right: 7px;
+        .show-tick {
+          .dropdown-toggle {
+            span.filter-option {
+              padding-left: 0px!important;
+            }
+          }
+        }
+      }
+    }
+    li.reli_report_i {
+      img {
+        width: 33px;
+      }
+      span {
+      padding-left: 16px;
+      font-weight: bold;
+      }
+      .select-list {
+        padding-right: 16px;
+        .show-tick {
+          .dropdown-toggle {
+            span.filter-option {
+              padding-left: 0px!important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.no-padding {
+  padding: 0 0;
+  p {
+    color: rgb(105, 105, 105);
+  }
+}
+.select-list {
+  .show-tick {
+      width: 100%!important;
+      button {
+        background: none;
+        border: none;
+        color: rgb(66, 136, 175);
+        font-size: 16px;
+        font-weight: bold;
+        &:focus {
+          outline: none!important;
+        }
+        &:active {
+          box-shadow: none!important;
+        }
+        .bs-caret {
+          &::before {
+            content: "\e114";
+            font-family: 'Glyphicons Halflings';
+            font-weight: 100;
+          }
+          .caret {
+            display: none;
+            font-weight: 100;
+          }
+        }
+      }
+      .dropdown-menu {
+        li {
+          background: none;
+          box-shadow: none!important;
+          border: none !important;
+          a {
+            font-size: 15px;
+            font-weight: bold;
+            &:hover {
+              background: none!important;
+              color: black!important; 
+            }
+          }
+        }
+        li.selected {
+          a {
+            color: #4288af !important;  
+            font-size: 15px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    .btn-group.open {
+      .dropdown-toggle {
+        box-shadow: none;
+        background: none;
+      }
+    }
+}
+.reports_menu {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.row { 
+  .fleet_report_div {
+    padding-top: 30px;
+    border: 1px solid rgb(200, 200, 200);
+    text-align: center;
+    height: 300px;
+    .italic {
+    font-style: italic;
+    color: rgb(66, 136, 175);
+    font-weight: bold;
+    }
+    .fleet_style {
+      font-weight: bold;
+      font-size: 22px;
+      color: rgb(102,102,102);
+    }
+    .fleet_link {
+      font-size: 17px;
+      color: rgb(66,135,175);
+      font-weight: bold;
+      cursor: pointer;
+      span {
+        top: 2px;
+        font-weight: normal!important;
+        cursor: pointer;
+      }
+    }
+    p {
+      &.fleet_set {
+        color: rgb(66, 135, 175);
+        font-weight: bold;
+        span {
+          color: rgb(66, 135, 175);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .excess_report_div {
+    padding-top: 30px;
+    border: 1px solid rgb(200, 200, 200);
+    text-align: center;
+    height: 300px;
+    .italic {
+    font-style: italic;
+    color: rgb(66, 136, 175);
+    font-weight: bold;
+    }
+    p {
+      &.excess_set {
+        color: rgb(66, 135, 175);
+        font-weight: bold;
+        span {
+          color: rgb(66, 135, 175);
+          font-weight: bold;
+        }
+      }
+    }
+    .excess_report_style {
+      font-weight: bold;
+      font-size: 22px;
+      color: rgb(102,102,102);
+    }
+    .excess_report_link {
+      font-size: 17px;
+      color: rgb(66,135,175);                                                                                                                                                                                                                                                                                                                                                                                                   
+      font-weight: bold;
+      cursor: pointer;
+      span {
+        top: 2px;
+        font-weight: normal!important;
+        cursor: pointer;
+      }
+    }
+  }
+  .reli_report_div {
+    padding-top: 30px;
+    border: 1px solid rgb(200, 200, 200);
+    text-align: center;
+    height: 300px;
+    .italic {
+    font-style: italic;
+    color: rgb(66, 136, 175);
+    font-weight: bold;
+    }
+    p {
+      &.reli_set {
+        font-weight: bold;
+        color: rgb(66, 135, 175);
+        span {
+          font-weight: bold;
+          color: rgb(66, 135, 175);
+        }
+      }
+    }
+    .reli_report_style {                                
+      font-weight: bold;
+      font-size: 22px;
+      color: rgb(102,102,102);
+    }
+    .reli_report_link {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+      font-size: 17px;
+      color: rgb(66,135,175);
+      font-weight: bold;
+      span {
+        top: 2px;
+        font-weight: normal!important;
+      }
+    }
+  }
+}
+#confirm-fleet-set-modal {
+  .modal-content {
+    .modal-header {
+      padding-left: 30px;
+      h4 {
+        color: black;
+        font-weight: bold;
+      }
+    }
+    .modal-body {
+      div.frequency-cls {
+        padding-bottom: 15px;
+        div.frequency-style {
+          width: 105px;
+          p {
+            width: 86px;
+            font-size: 17px;
+            font-weight: bold;
+            line-height: 31px;
+            text-align: left;
+          }
+        }
+        div.frequency-select {
+          width: 114px;
+          span {
+            div.bootstrap-select {
+              width: 91px!important;
+            }
+          }
+        }
+      }
+      div.time-cls {
+        border-bottom: 1px solid rgb(202, 202, 202);
+        padding-bottom: 10px;
+        div.time-style {
+          width: 105px;
+          p {
+              width: 86px;
+              font-weight: bold;
+              font-size: 17px;
+              text-align: right;
+              line-height: 31px;
+          }
+        }
+      }
+    }
+    .modal-footer {
+      padding-top: 100px;
+      padding-left: 155px;
+      a.save_btn {
+        border-radius: 0px!important;
+        border: 1px solid;
+        span {
+          top: 2px;
+        }
+      }
+      a.cancel_btn {
+        color: rgb(173, 173, 173)!important;
+        span {
+          top: 2px;
+        }
+      }
+    }
+  }
+}
+#confirm-reliability-set-modal {
+  span.week-style {
+    position: absolute;
+    top: 6px;
+  }
+  div.btn-toolbar {
+    display: inline-block;
+    float: right;
+    button.btn-sun {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    button.btn-mon {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    button.btn-tues {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    button.btn-wed {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    button.btn-thurs {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    button.btn-fri {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    button.btn-sat {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+}

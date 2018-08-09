@@ -1,0 +1,184 @@
+<section class="content row">
+  <div class="row" id="reports-column">
+  <div class="row reports_menu">
+    <div class="col-sm-4 col-md-4">
+      <div class="fleet_report_div">
+        <img src="/assets/fuel-usage-report-icon.svg">
+        <p class="fleet_style">Fleet Report</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> Recurring Report scheduled</p>
+        <p>for <span class="italic">Daily</span> email distribution</p>
+        <p>at <span class="italic">12:00 AM</span></p>
+        <p class="fleet_set"><span class="glyphicon glyphicon-cog"></span> Edit Settings</p>
+        <p class="fleet_link">On-Demand Report<span class="glyphicon glyphicon-menu-right"></span></p>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <div class="excess_report_div">
+        <img src="/assets/excess-idle-icon.svg">
+        <p class="excess_report_style">Excess Idle Report</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> Recurring Report scheduled</p>
+        <p>for <span class="italic">Daily</span> email distribution</p>
+        <p>at <span class="italic">12:00 AM</span></p>
+        <p class="excess_set"><span class="glyphicon glyphicon-cog"></span> Edit Settings</p>
+        <p class="excess_report_link">On-Demand Report<span class="glyphicon glyphicon-menu-right"></span></p>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <div class="reli_report_div">
+        <img src="/assets/reliability-icon.svg">
+        <p class="reli_report_style">Reliability Report</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> Recurring Report scheduled</p>
+        <p>for <span class="italic">Weekly</span> email distribution on</p>
+        <p><span class="italic">Monday</span> at <span class="italic">08:00 AM</span></p>
+        <p class="reli_set"><span class="glyphicon glyphicon-cog"></span> Edit Settings</p>
+        <p class="reli_report_link">On-Demand Report<span class="glyphicon glyphicon-menu-right"></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="confirm-fleet-set-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><span class="glyphicon glyphicon-envelope"></span> Schedule Recurring Email Fleet Report</h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-sm-12 col-md-12 frequency-cls">
+          <div class="col-sm-4 col-md-4 frequency-style">
+            <p>Frequency</p>
+          </div>
+          <div class="col-sm-8 col-md-8 frequency-select">
+            <span>
+              <select class="selectpicker">
+                <option>Daily</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+              </select>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 time-cls">
+          <div class="col-sm-4 col-md-4 time-style">
+            <p>Time</p>
+          </div>
+          <div class="col-sm-4 col-md-4"> 
+            <div class="input-group bootstrap-timepicker timepicker">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+              <input id="timepicker1" type="text" class="form-control input-small">
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <select class="form-control"></select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="btn save_btn">Save Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-default button-cal cancel-change cancel_btn"  aria-hidden="true" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancel</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="confirm-excess-set-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><span class="glyphicon glyphicon-envelope"></span> Schedule Recurring Email Fleet Report</h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-sm-12 col-md-12 frequency-cls">
+          <div class="col-sm-4 col-md-4 frequency-style">
+            <p>Frequency</p>
+          </div>
+          <div class="col-sm-8 col-md-8 frequency-select">
+            <span>
+              <select class="selectpicker">
+                <option>Daily</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+              </select>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 time-cls">
+          <div class="col-sm-4 col-md-4 time-style">
+            <p>Time</p>
+          </div>
+          <div class="col-sm-4 col-md-4"> 
+            <div class="input-group bootstrap-timepicker timepicker">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+              <input id="timepicker1" type="text" class="form-control input-small">
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <select class="form-control"></select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="btn save_btn">Save Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-default button-cal cancel-change cancel_btn"  aria-hidden="true" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancel</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="confirm-reliability-set-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><span class="glyphicon glyphicon-envelope"></span> Schedule Recurring Email Fleet Report</h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-sm-12 col-md-12 frequency-cls">
+          <div class="col-sm-2 col-md-2 frequency-style">
+            <p>Frequency</p>
+          </div>
+          <div class="col-sm-2 col-md-2 frequency-select">
+            <span>
+              <select class="selectpicker">
+                <option>Daily</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+              </select>
+            </span>
+          </div>
+          <div class="col-sm-8 col-md-8" style="width: 295px;">
+            <span class="week-style">Day of Week</span>
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="display: inline-block;">
+              <div class="btn-group" role="group" aria-label="First group">
+                <button type="button" class="btn btn-secondary btn-sun">S</button>
+                <button type="button" class="btn btn-secondary btn-mon">M</button>
+                <button type="button" class="btn btn-secondary btn-tues">T</button>
+                <button type="button" class="btn btn-secondary btn-wed">W</button>
+                <button type="button" class="btn btn-secondary btn-thurs">T</button>
+                <button type="button" class="btn btn-secondary btn-fri">F</button>
+                <button type="button" class="btn btn-secondary btn-sat">S</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 time-cls">
+          <div class="col-sm-4 col-md-4 time-style">
+            <p>Time</p>
+          </div>
+          <div class="col-sm-4 col-md-4"> 
+            <div class="input-group bootstrap-timepicker timepicker">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+              <input id="timepicker1" type="text" class="form-control input-small">
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <select class="form-control"></select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a class="btn save_btn">Save Settings<span class="glyphicon glyphicon-chevron-right"></span></a>
+        <a class="btn btn-default button-cal cancel-change cancel_btn"  aria-hidden="true" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancel</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

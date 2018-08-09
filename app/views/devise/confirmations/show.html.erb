@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="nine columns">
+    <div class="user-login-wrap password-set">
+      <h1>Welcome, <%= resource.email %></h1>
+      <h2>Create a password to securely access your account.</h2>
+      <%= render "users/password_guidelines" %>
+      <%= bootstrap_form_errors @user %>
+        <%= semantic_form_for(
+            resource,
+            :as => resource_name,
+            :url => confirm_path,
+            :html => { :class => "form-vertical" }
+        ) do |f| %>
+        <%= f.inputs do %>
+          <%= f.input :password %>
+          <%= f.input :password_confirmation %>
+        <% end %>
+        <%= f.hidden_field :confirmation_token %>
+        <%= f.actions do %>
+          <%= f.action :submit, :as => :button, :label => "Save Password", :button_html => { :class => "btn btn-default" } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

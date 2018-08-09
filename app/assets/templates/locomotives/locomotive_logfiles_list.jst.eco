@@ -1,0 +1,27 @@
+<ul>
+<% for month in @log.models: %>
+  <li class="clearfix"><h5 class="underlined"><%= month.get('month_year') %></h5></li>
+  <% for log in month.get("items"): %>
+  <li>
+    <!-- Download Link -->
+    <span class="file-wrap">
+      <% if log.exists: %>
+        <a href="<%= log.url %>">
+          <%= log.filename %>
+          <% if log.new: %>
+            (new)
+          <% end %>
+        </a>
+      <% else: %>
+        <em>File pending</em>
+      <% end %>
+    </span>
+
+    <!-- Label -->
+    <%= log.label %>
+
+  </li>
+  <% end %>
+<% end %>
+</ul>
+

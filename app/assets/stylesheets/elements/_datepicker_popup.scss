@@ -1,0 +1,62 @@
+.date-picker-wrap {
+  position: relative;
+  text-align: left;
+
+  .datepicker-popup {
+    $arrow-size: 8px;
+
+    background-color: #fff;
+    border: 1px solid $gray-light;
+    border-radius: $border-radius-base;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: $arrow-size - 1;
+    z-index: 100001;
+
+    &:before, &:after {
+      border-left: $arrow-size solid transparent;
+      border-right: $arrow-size solid transparent;
+      content: "";
+      height: 0;
+      right: 35px;
+      position: absolute;
+      width: 0;
+    }
+
+    &:after {
+      border-bottom: $arrow-size solid white;
+      top: 1 - $arrow-size;
+    }
+
+    &:before {
+      border-bottom: $arrow-size solid $gray-light;
+      top: -$arrow-size;
+    }
+  }
+
+  .ui-datepicker-inline {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  form {
+    border-top: 1px solid $gray-lighter;
+    color: $gray-dark;
+    padding: 10px;
+
+    .date-entry, .time-entry {
+      display: inline-block;
+      padding-right: 15px;
+      vertical-align: middle;
+      width: 170px;
+    }
+
+    input {
+    }
+    button {
+
+    }
+  }
+}

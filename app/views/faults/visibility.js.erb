@@ -1,0 +1,5 @@
+<% if @fault.hidden? %>
+$("#<%= @fault.id %>").text("Visible")
+<% else %>
+$("#<%= @fault.id %>").text("Hidden")
+<% end %>

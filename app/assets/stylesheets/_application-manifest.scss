@@ -1,0 +1,30 @@
+@import "normalize.css.scss";
+@import "settings";
+@import "bootstrap";
+@import "util/respond";
+@import "our-skeleton-grid.css.scss";
+@import "skeleton-layout.css.scss";
+@import "elements/buttons";
+@import "main.css.scss";
+@import "elements/dialog";
+@import "jquery.dataTables.min";
+@import "fixedColumns.dataTables.min";
+@import "bootstrap-select.min";
+@import "bootstrap-timepicker.min";
+@import "fixed-columns.min";
+@import "tables.jquery.min";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.account-form {
+  textarea,
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    @extend .form-control;
+  }
+}
+
+@include mobile(true)  { #force-mobile  { display: none; } }
+@include desktop(true) { #force-desktop { display: none; } }

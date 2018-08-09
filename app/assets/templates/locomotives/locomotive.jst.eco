@@ -1,0 +1,17 @@
+<td class="loconumber-td focus-on-map">
+  <a class="round4" href="/locomotives/<%= @locomotive.get('id') %>"><%= @locomotive.get('title') %><span class="glyphicon glyphicon-menu-right" style="font-weight: bold;"></span></a>
+</td>
+<td class="locostatus-td">
+  <span data-status="" data-sortvalue=""></span>
+</td>
+<td class="locotype-td"><%= @locomotive.get('locomotive_type').name %></td>
+<td class="location-td"></td>
+<td class="time-td">
+  <div style="position:relative">
+  <div class="time-wrap" data-utc=""></div>
+  <div class="time-list-wrap"></div>
+  </div>
+</td>
+<td class="fault-summary-link-td">
+  <a class="round4" href="/locomotives/<%= @locomotive.get('id') %>/fault-summary"><span class="total_faults_cls"><%= @locomotive.get("total_faults") %></span><strong> faults, SUMMARY</strong><span class="glyphicon glyphicon-menu-right"></span></a>
+</td>

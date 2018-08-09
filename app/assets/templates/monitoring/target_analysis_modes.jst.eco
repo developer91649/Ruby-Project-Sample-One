@@ -1,0 +1,37 @@
+<span class="close-btn"></span>
+<ul class="modes-panel-top">
+  <li><strong><%= @panelPointData.locoName %></strong></li>
+  <li><%= @panelPointData.time %></li>
+  <li><strong>Value: <%= @panelPointData.value %> <%= @panelPointData.units %></strong></li>
+</ul>
+<% if @criticalAlarm: %>
+  <div class="critical-alarm-wrap">
+    <div class='critical-alarm-notification'>
+      <img class="critical-alarm-loading" src="/assets/ajax-loader-sm-transparent.gif" />
+      Critical Alarm <small>Loading Details</small>
+    </div>
+    <div class='critical-alarm-details'>
+      <h2><i class="glyphicon glyphicon-flag"></i>Critical Alarms</h2>
+      <ul class="critical-alarms">
+      </ul>
+    </div>
+  </div>
+<% end %>
+<div class="modes-panel-btm">
+  <h2><i class="ta-logo"></i>Target Analysis</h2>
+  <ul class="modes">
+    <% for mode in @modes: %>
+      <li><a class="<%= mode.class %>" href="<%= mode.value %>"><%= mode.title %></a></li>
+    <% end %>
+  </ul>
+</div>
+<div class="modes-panel-btm">
+  <ul class="series-options">
+    <li><a id="show-gps" href="#show-gps">Show GPS</a></li>
+    <% if @series.userOptions.hasCriticalAlarms: %>
+      <li><a class="toggle-critical-alarms" href="#toggle-critical-alarms"><%= if @series.criticalAlarmsEnabled then "Hide" else "Show" %> Critical Alarms</a></li>
+    <% else: %>
+      <li><a class="toggle-critical-alarms disabled" href="#toggle-critical-alarms">No Critical Alarms In Range</a></li>
+    <% end %>
+  </ul>
+</div>

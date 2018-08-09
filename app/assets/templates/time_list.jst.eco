@@ -1,0 +1,15 @@
+<ul class="times-list">
+  <a class="close-times-list"></a>
+  <li data-pref="UTC" class="utc-time clearfix">
+    <span>UTC<em></em></span>
+    <strong><%= @times.utc %></strong>
+  </li>
+  <li data-pref="Preference" class="preference-time clearfix">
+    <span>Preference<em></em></span>
+    <strong><%= @times.preference %></strong>
+  </li>
+  <li data-pref="Locomotive" class="locomotive-time clearfix">
+    <span>Loco<em></em></span>
+    <strong><%= @times.locomotive %></strong>
+  </li>
+</ul>

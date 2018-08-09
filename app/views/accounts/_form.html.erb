@@ -1,0 +1,23 @@
+<%= bootstrap_form_errors @account %>
+<%= semantic_form_for(
+    @account,
+    :url => account_path(@account),
+    :method => :put,
+    :html => { :class => "form-vertical" }
+) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :company_address_1 %>
+    <%= f.input :company_address_2 %>
+    <%= f.input :company_city %>
+    <%= f.input :company_state %>
+    <%= f.input :company_zip %>
+    <%= f.input :company_country %>
+    <%= f.input :company_phone %>
+    <%= f.input :company_fax %>
+    <%= f.input :company_email %>
+    <%= f.input :company_url %>
+    <%= f.label "Daily Log Download Time UTC:" %>
+    <%= time_select 'time', :script_time, {}, {default: {hour: 10, minute: 5}} %>
+    <%= f.submit "Save", :class => "btn btn-primary" %>
+<% end %>
+

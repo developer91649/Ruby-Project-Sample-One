@@ -1,0 +1,132 @@
+
+#fleetmap-wrap {
+  display: none;
+}
+
+.loco-info-wrap {
+  width: 100%;
+  overflow-y: scroll;
+  max-height: 78px * 6;
+}
+
+.loco-info {
+  font-family:"Helvetica Neue";
+  background: $gray-lightest;
+  border:1px solid $gray-light;
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-standard;
+  padding:0;
+  font-size:11px;
+
+  .link-wrap {
+    border-top: 1px solid $gray-light;
+    a {
+      margin:0;
+      display: block;
+      text-align: center;
+      box-shadow: 0 1px 0 white inset;
+      box-sizing: border-box;
+      padding: 4px;
+    }
+    a:hover {
+      background-color: #ffffff;
+      text-decoration: none;
+    }
+    .loco-info-details {
+      float:left;
+      width: 40%;
+      border-right: 1px solid $gray-light;
+    }
+    .loco-fault-summary {
+      margin-left: 40%;
+      width: 60%;
+    }
+  }
+}
+
+.loco-info-pack {
+  border-bottom: 1px solid $gray-light;
+  padding-top: 10px;
+
+  &:last-of-type {
+    border-bottom-width: 0;
+  }
+}
+
+.loco-info-header {
+  white-space: nowrap;
+}
+
+.loco-info-num {
+  padding-left: 10px;
+  color: $gray-dark;
+  display: inline-block;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.loco-info-status {
+  display: inline-block;
+  width: 100px;
+  text-align:right;
+  padding-right: 10px;
+}
+
+.loco-info-status img {
+  width:10px;
+  height:auto;
+}
+
+.status-critical {
+  color:red;
+}
+
+.status-warning {
+  color:#ab6a05;
+}
+
+.status-message {
+  color:green;
+}
+
+.status-com_lost {
+  color:red;
+}
+
+.status-offline {
+  color:#222;
+}
+
+.loco-info-time {
+  color: $gray-dark;
+  clear:both;
+  font-size:10px;
+  padding-top: 3px;
+  margin: 0 10px 10px;
+}
+
+.loco-more-notification {
+  color: $gray;
+  text-align: center;
+  padding: 3px;
+}
+
+.loco-info-scroll {
+  color: $brand-primary;
+  cursor: pointer;
+  display: block;
+  padding: 3px 20px;
+  text-align: center;
+
+  &.up   { border-bottom: 1px solid $gray-light; border-radius: $border-radius-base  $border-radius-base 0 0; }
+  &.down { border-top: 1px solid $gray-light; border-radius: 0 0 $border-radius-base  $border-radius-base; }
+  &:hover { background-color: white; }
+}
+
+.loco-info-fault {
+  margin: 0 5px;
+}
+
+.loco-info-gps {
+  margin: 0 5px;
+}

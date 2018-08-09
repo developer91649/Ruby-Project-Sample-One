@@ -1,0 +1,6 @@
+<span class="<% if @system.get('system_status') is 0: %>OFF<% else if @system.get("system_status") is 1: %>ON<% end %>">
+  <span class="name"><%= @system.get('system_name') %>:</span>
+  <strong></strong>
+  <em></em>
+</span>
+

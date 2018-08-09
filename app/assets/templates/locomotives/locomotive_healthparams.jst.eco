@@ -1,0 +1,9 @@
+<% for param in @params.models: %>
+  <li class="clearfix" data-variable="<%= param.get('qes_variable') %>">
+    <a href="/health/<%= param.get('qes_variable') %>/<%= @locomotive.get('id') %>/">
+      <strong class="title columns-four alpha "><%= param.get('title') %></strong>
+      <strong class="p-group columns-two hide-in-mobile"><%= param.get('source') %> </strong>
+      <strong class="units columns-two omega"><em><%= param.get('value') %></em><%= param.get('units') %></strong>
+    </a>
+  </li>
+<% end %>

@@ -1,0 +1,96 @@
+<section class="content row">
+  <div class="sixteen columns alpha">
+    <div class="sixteen columns alpha">
+      <div class="loco-selection-super-wrap">
+        <div class="loco-selection-wrap row">
+          <div class="loco-all-wrap row">
+            <select id="loco-type-select" class="selectpicker show-tick" title="Select Locomotive Type">
+              <% for locomotive_type in @locomotive_types.models: %>
+                <option value="<%= locomotive_type.get("id") %>"><%= locomotive_type.get("name") %></option>
+              <% end %>
+            </select>
+            <span class="all-locos-display-toggle">
+              <span class="glyphicon glyphicon-chevron-down right"></span>
+              <span class="glyphicon glyphicon-chevron-up right"></span>
+            </span>
+            <ul id="monitoring-locomotive-list-js" class="row"></ul>
+          </div>
+          <div class="loco-selected row">
+            <h3><span>Select locomotives to view graph (Max 10).</span></h3>
+            <ul></ul>
+          </div>
+        </div>
+        <div class="chart-notes left">
+          <h5 class="left"><strong>! Warning:</strong> There is no data for the chosen parameter/date range: </h5>
+          <ul class="left"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="nine columns alpha" style="width: 340px;">
+      <div class="param-list-wrap">
+        <div class="clearfix param-list-choices">
+          <a class="choose-param-btn open-close choose-param"><h3 class="param-chosen">SELECT A <%= @chart_type_text %> PARAMETER.</h3><span></span></a>
+          <div class="param-dropdown"></div>
+        </div>
+        <div class="clearfix param-list-chosen">
+          <div class="param-description"></div>
+        </div>
+      </div>
+    </div>
+    <div class="seven columns omega" style="width: 100%;">
+      <div class="date-selection-superwrap">
+        <span id="date-range-selector"></span>
+        <div class="date-range-wrap row">
+          <div class="date-range-display">
+            <span class="chosen-from-date"></span> -
+            <span class="chosen-to-date"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sixteen columns alpha">
+      <div class="chart-actions row">
+        <a href="#" class="btn btn-sm reset disabled right" id="reset-zoom">Reset Zoom <span class="glyphicon glyphicon-search"></span></a>
+        <% if @user.hasFeatureEnabled("csv_download") :%>
+        <form id="export-csv-form" method="GET" action="">
+          <input type="hidden" name="from"></input>
+          <input type="hidden" name="to"></input>
+          <input type="hidden" name="loco_ids"></input>
+          <input type="hidden" name="format" value="zip"></input>          
+          <button class="btn button-csv disabled right" id="export-csv">Export CSV <span class="glyphicon glyphicon-download-alt"></span></button>
+        </form>
+        <% end %>
+      </div>
+    </div>
+    <div class="sixteen columns alpha">
+      <div class="draw-chart-wrap row">
+        <div class="errors-options">
+          <h5>The following options need to be selected before a graph can be drawn:</h5>
+          <ul></ul>
+        </div>
+        <div class="chart-loader"><div class="loader-mask"><p class="default_text">Loading ...</p></div></div>
+        <div class="chart-container-wrap">
+          <div id="chart-container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /columns -->
+</section><!-- /content -->
+
+<div id="confirm-loco-type-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><span class="glyphicon glyphicon-exclamation-sign"></span> Warning</h4>
+      </div>
+      <div class="modal-body">
+        <p>You are about to switch Locomotive Types,which will clear the selected parameter and all locomotives currently selected.</p>
+        <p class="modal-checkbox"><input type="checkbox" id="inlineCheckbox1" value="option1"> Please don't show me this warning again.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary confirm-change">Confirm</button>
+        <button type="button" class="btn btn-default button-cal cancel-change" aria-hidden="true" data-dismiss="modal">Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

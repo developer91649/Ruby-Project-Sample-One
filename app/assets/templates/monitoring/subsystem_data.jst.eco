@@ -1,0 +1,58 @@
+<% displayedParams = @displayedParams %>
+
+<% firstRow = @collection[0] %>
+<% numColumns = _.size(firstRow) - 1 %>
+<% style = "width: #{80 / numColumns}%" %>
+<% dynamicParams = _.filter( _.keys(firstRow), (key) -> !_.has(displayedParams, key)) %>
+<% knownParams = _.filter(_.keys(firstRow), (key) -> _.has(displayedParams, key)) %>
+
+<table>
+  <thead>
+    <tr>
+      <th class="datetime" style="width: 20%">Time</th>
+
+      <% for dynamicParam in dynamicParams: %>
+        <% continue if dynamicParam == "timestamp" %>
+
+        <th class="value" style="<%= style %>">
+          <%= dynamicParam %>
+        </th>
+      <% end %>
+
+      <% for knownParam in knownParams: %>
+        <th class="value" style="<%= style %>">
+          <%= displayedParams[knownParam] %>
+        </th>
+      <% end %>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% for change in @collection: %>
+      <tr>
+
+        <th class="datetime" style="width: 20%">
+          <%= moment.utc(change.timestamp).format("YYYY-MM-DD HH:mm:ss") %>
+        </th>
+
+        <% for dynamicParam in dynamicParams: %>
+          <% continue if dynamicParam == "timestamp" %>
+
+          <td class="value <%= change[dynamicParam].changed %>" style="<%= style %>">
+            <%= change[dynamicParam].status %>
+          </td>
+        <% end %>
+
+        <% for knownParam in knownParams: %>
+          <td class="value <%= change[knownParam].changed %>" style="<%= style %>">
+            <%= change[knownParam].status %>
+          </td>
+        <% end %>
+
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

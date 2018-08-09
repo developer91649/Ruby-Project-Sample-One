@@ -1,0 +1,318 @@
+.dialog {
+  background-color: #fff;
+  border: 1px solid $gray-light;
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-standard;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 700px;
+  z-index: 100001;
+
+  &.ui-draggable-dragging {
+    background-color: #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  @include mobile {
+    border-radius: 0;
+    border-width: 0;
+    bottom: 0 !important;
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+
+    h2 {
+      padding-right: 30px;
+    }
+
+    &.health-snapshot .dialog-data table {
+      display: block;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+
+      tr {
+        display: block;
+        white-space: nowrap;
+
+        td, th {
+          display: inline-block;
+          float: none;
+
+          &.value { width: 60px; }
+          &.units { width: 55px; }
+
+          &.parameterName {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  .close-btn {
+    @extend .glyphicon;
+    @extend .glyphicon-remove;
+    color: $gray;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    padding: 4px;
+    border: 1px solid transparent;
+    border-radius: $border-radius-small;
+
+    &:hover {
+      border-color: $gray-light;
+      color: $gray-dark;
+    }
+  }
+
+  .ta-logo-wrap {
+    float: left;
+    margin-left: 11px;
+    padding-top: 11px;
+    padding-right: 10px;
+    height: 32px;
+
+    i.ta-logo {
+      bottom: -2px;
+      margin-right: 3px;
+    }
+  }
+
+  .dialog-header {
+    background-color: $gray-lightest;
+    background-color: rgba(0, 0, 0, 0.035);
+    border-radius: $border-radius-base $border-radius-base 0 0;
+    cursor: move;
+
+    h2 {
+      font-size: 16px;
+      line-height: 22px;
+      margin: 0;
+      padding-left: 10px;
+    }
+  }
+
+  .dialog-section {
+    padding: 10px 10px 0;
+    border-top: 1px solid $gray-lighter;
+  }
+
+  .dialog-data {
+    margin-top: 15px;
+
+    .loader {
+      border-top: 1px solid $gray-light;
+      color: $gray-light;
+      padding: 40px 10px;
+      text-align: center;
+    }
+
+    table {
+      margin-top: 15px;
+      width: 100%;
+
+      th, td {
+        font-size: 13px;
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+
+      tr, th, td {
+        box-sizing: border-box;
+        display: block;
+        float: left;
+      }
+
+      tr {
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      thead {
+        display: block;
+
+        &:after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+        th {
+          background-color: $brand-primary;
+          color: white;
+          font-weight: normal;
+          line-height: 24px;
+          text-align: left;
+        }
+      }
+
+      tbody {
+        padding: 8px 0 6px;
+        max-height: 240px;
+        clear: left;
+        display: block;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        tr {
+          margin: 0;
+          padding: 0;
+        }
+
+        td {
+          line-height: 16px;
+          margin: 0;
+          padding-bottom: 4px;
+
+          &.history {
+            color: $gray;
+          }
+        }
+      }
+
+      margin-bottom: 0;
+    }
+  }
+
+  .dialog-section.point-summary {
+    dl {
+      @extend .clearfix;
+      margin-bottom: 10px;
+      padding: 0;
+      text-align: right;
+    }
+    dl dt, dl dd {
+      font-size: 13px;
+      font-weight: 400;
+      display: inline-block;
+      margin: 0;
+
+      &.value {
+        font-weight: 600;
+      }
+    }
+
+    dt {
+      &.loco, &.time { display: none; }
+      &:after { content: ":"; }
+    }
+
+    dd {
+      &.time {
+        float: left;
+      }
+
+      &.loco {
+        display: block;
+        font-weight: 600;
+        text-align: left;
+      }
+    }
+  }  
+}
+
+.dialog.health-snapshot {
+  .dialog-data table {
+    .parameterName { width: 36% }
+    .history       { width: 8%  }
+    .current       { width: 12% }
+    .units         { width: 12% }
+  }
+}
+
+.dialog.ta-dialog.ta-mode-report {
+  &.subsystem-history {
+    width: 960px;
+
+    .dialog-data table {
+      .datetime { /* Width set via JS now */ }
+      .value    { /* Width set via JS now */ }
+
+      tbody {
+        td {
+          &.datetime {  }
+          &.value { }
+          &.value.changed { font-weight: bold; }
+        }
+      }
+    }
+  }
+}
+
+.dialog-section {
+  &.map-options {
+    .date-range-display {
+      float: left;
+      font-size: 13px;
+
+      .datetime-from, .datetime-to {
+        background: transparent;
+        border-radius: $border-radius-small;
+        display: inline-block;
+        padding: 2px 4px;
+        margin: -2px -4px;
+        transition: background 0.5s;
+
+        &.updated {
+          background: $state-warning-bg;
+        }
+      }
+
+      .datetime-separate {
+        color: $gray;
+        font-style: italic;
+        padding: 0 2px;
+      }
+    }
+
+    .btn-group {
+      margin-bottom: 10px;
+    }
+
+    .date-options {
+      margin: 0;
+    }
+
+    .date-picker-wrap .datepicker-popup {
+      right: -5px;
+    }
+  }
+
+  &.map {
+    position: relative;
+    overflow: hidden;
+    .map-container:after {
+      background: $state-warning-bg;
+      box-shadow: $box-shadow-standard;
+      color: $state-warning-text;
+      border: 1px solid $state-warning-border;
+      border-top-width: 0;
+      border-radius: 0 0 $border-radius-base $border-radius-small;
+      content: "Loading GPS Data ...";
+      display: block;
+      left: 30%;
+      line-height: 30px;
+      opacity: 0.4;
+      position: absolute;
+      text-align: center;
+      top: -35px;
+      transition: top 0.5s, opacity 0.5s;
+      width: 40%;
+    }
+
+    &.loading .map-container:after {
+      opacity: 0.9;
+      top: 0;
+    }
+  }
+
+  .map-container {
+    height: 400px;
+    margin-bottom: 10px;
+  }
+}

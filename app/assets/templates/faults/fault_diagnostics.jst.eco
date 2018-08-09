@@ -1,0 +1,69 @@
+<div class="quickview-placeholder"></div>
+
+<section class="content row">
+  <div class="sixteen columns alpha">
+    <div class="ten columns alpha">
+      <div class="fault-diagnostics-wrap-top <%= @fault.get("fault_status_class") %>_fault">
+        <div class="fault-meta clearfix">
+          <div class="fault-header clearfix fault-cls">
+            <h1><%= @fault.get("title") %></h1>
+            <a class="right btn btn-sm target-cls">Target Analysis</a>
+          </div>
+          <ul class="fault-info">
+            <li>
+              <span class="fault_severity"><%= @fault.get("fault_status_text") %></span>
+            </li>
+            <li><span>System:</span> <%= @fault.get("system_name") || @alarm.get("system_name") %></li>
+            <li><span>Code:</span> <%= @fault.get("code_display") %></li>
+
+            <% if @fault.get("spn")?: %>
+              <li><span>SPN-FMI:</span> <%= @fault.get("spn") %>
+                <% if @fault.get("fmi")?: %>
+                -<%= @fault.get("fmi") %>
+                <% end %>
+              </li>
+            <% end %>
+
+            <% if @fault.get("qes_variable")?: %>
+              <li><span>QES #</span><%= @fault.get("qes_variable") %></li>
+            <% end %>
+
+            <% if @fault.get("cummins_variable")?: %>
+              <li><span>Cummins #</span><%= @fault.get("cummins_variable") %></li>
+            <% end %>
+          </ul>
+          <ul class="location-style">
+            <li><span>ON: 0000-00-00 00:00:00</span> <%= @fault.get("time_utc_on") %></li>
+            <li><span class="glyphicon glyphicon-map-marker"></span>Location of Fault</li>
+          </ul>
+        </div><!-- level_XXX_fault -->
+      </div><!-- /fault-diagnostics-wrap-top -->
+      <div class="fault-diagnostics-wrap-bottom">
+        <h3>Fault Description</h3>
+        <h4>Explanation</h4>
+        <p><%- @fault.get("explanation") %></p>
+        <h4>Locomotive Effect</h4>
+        <p><%- @fault.get("locomotive_effect") %></p>
+        <h3>Action/Resolution</h3>
+        <h4>Operator Action</h4>
+        <p><%- @fault.get("operator_action") %></p>
+        <h4>Maintainer Action</h4>
+        <p><%- @fault.get("maintainer_action") %></p>
+      </div><!-- fault-diagnostics-wrap-bottom -->
+    </div><!-- /columns -->
+    <div class="six columns omega">
+      <div class="resolution-notes-wrap">
+        <h3>Resolution Notes</h3>
+        <div class="resolution-notes-entries"></div>
+        <form action="" class="resolution-notes-form">
+          <div class="form-group">
+            <label for="resolution-note-text">Your response:</label>
+            <textarea name="resolution-note-text" class="form-control" id="resolution-note-text" cols="30" rows="10"></textarea>
+          </div>
+          <button value="Submit" class="submit btn btn-primary">Submit<span class="glyphicon glyphicon-menu-right"></span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section><!-- /content -->
+

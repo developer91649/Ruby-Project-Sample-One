@@ -1,0 +1,202 @@
+<section class="content row">
+  <div class="sixteen columns alpha">
+    <div class="row fleet-row">
+      <div class="col-sm-6 col-md-6 fleet-header">
+        <image src="/assets/fuel-usage-report-icon.svg"><span class="download-icon">Fleet Report<button class="btn button-csv" id="export-csv">Export CSV <span class="glyphicon glyphicon-download-alt"></span></button></span>
+      </div>
+      <div class="col-sm-6 col-md-6 daily-report">
+        <p style="float: right;"><span class="glyphicon glyphicon-envelope"></span> Recurring Report scheduled for <span class="italic">Daily</span> distribution</p>
+      </div>
+    </div>
+    <div class="parent-row"">
+      <div class="col-sm-8 col-md-8">
+        <div class="total-fleet" style="float: left; width: 30%;">
+          <p>Total Fuel Consumed</p>
+          <strong>18,963<span>LIT</span></strong>
+        </div>
+        <div class="distance-fleet" style="float: left; width: 35%;">
+          <p>Distance Traveled</p>
+          <strong>3,243<span>KM</span></strong>
+        </div>
+        <div class="power-fleet" style="float: left; width: 35%;">
+          <p>Power Generated</p>
+          <strong>5,726<span>KWH</span></strong>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-4">
+        <div class="seven columns omega" style="width: 100%;">
+          <div class="date-selection-superwrap">
+            <span id="date-range-selector"></span>
+            <div class="date-range-wrap row">
+              <div class="date-range-display">
+                <span class="chosen-from-date"></span> -
+                <span class="chosen-to-date"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <table id="sample" class="stripe row-border order-column" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Fuel Consumed(lit)</th>
+              <th>Odometer Start(km)</th>
+              <th>Odometer End(km)</th>
+              <th>>Distance Traveled(km)</th>
+              <th>Power Generated(kWh)</th>
+              <th>Ending GPS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LM3301</td>
+              <td>0</td>
+              <td>156,418</td>
+              <td>156,454</td>
+              <td>36</td>
+              <td>10</td>
+              <td>-32.234939, 148.241935</td>
+            </tr>
+            <tr>
+              <td>LM3302</td>
+              <td>0</td>
+              <td>0</td>
+              <td>153,853</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0.0, 0.0</td>
+            </tr>
+            <tr>
+              <td>LM3303</td>
+              <td>0</td>
+              <td>0</td>
+              <td>161,196</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0.0, 0.0</td>
+            </tr>
+            <tr>
+              <td>LM3304</td>
+              <td>0</td>
+              <td>0</td>
+              <td>127,466</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0.0, 0.0</td>
+            </tr>
+            <tr>
+              <td>LM3305</td>
+              <td>3823</td>
+              <td>61,786</td>
+              <td>62,274</td>
+              <td>488</td>
+              <td>1228</td>
+              <td>-34.446783, 150.891186</td>
+            </tr>
+            <tr>
+              <td>LM3306</td>
+              <td>0</td>
+              <td>186,888</td>
+              <td>186,889</td>
+              <td>1</td>
+              <td>0</td>
+              <td>-34.769576, 149.711921</td>
+            </tr>
+            <tr>
+              <td>LM3307</td>
+              <td>0</td>
+              <td>213,766</td>
+              <td>213,766</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0.0, 0.0</td>
+            </tr>
+            <tr>
+              <td>LM3308</td>
+              <td>0</td>
+              <td>0</td>
+              <td>179,319</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0.0, 0.0</td>
+            </tr>
+            <tr>
+              <td>LM3309</td>
+              <td>0</td>
+              <td>138,885</td>
+              <td>139,869</td>
+              <td>984</td>
+              <td>1442</td>
+              <td>-32.160431, 140.661736</td>
+            </tr>
+            <tr>
+              <td>LM3310</td>
+              <td>0</td>
+              <td>209,800</td>
+              <td>209,799</td>
+              <td>-1</td>
+              <td>0</td>
+              <td>0.0, 0.0</td>
+            </tr>
+            <tr>
+              <td>LM3311</td>
+              <td>4,012</td>
+              <td>76,796</td>
+              <td>77,289</td>
+              <td>493</td>
+              <td>1224</td>
+              <td>-34.447091, 150.89118</td>
+            </tr>
+            <tr>
+              <td>LM3312</td>
+              <td>0</td>
+              <td>62,044</td>
+              <td>62,295</td>
+              <td>251</td>
+              <td>371</td>
+              <td>-32.234911, 148.241785</td>
+            </tr>
+            <tr>
+              <td>LM3313</td>
+              <td>0</td>
+              <td>0</td>
+              <td>50,369</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0.0, 0.0</td>
+            </tr>
+            <tr>
+              <td>LM3314</td>
+              <td>0</td>
+              <td>76,693</td>
+              <td>76,700</td>
+              <td>7</td>
+              <td>1</td>
+              <td>-32.911151, 151.770295</td>
+            </tr>
+            <tr>
+              <td>LM3315</td>
+              <td>5,450</td>
+              <td>62,023</td>
+              <td>64,006</td>
+              <td>983</td>
+              <td>1450</td>
+              <td>-32.160915, 140.660586</td>
+            </tr>
+            <tr>
+              <td>LM3316</td>
+              <td>0</td>
+              <td>53,124</td>
+              <td>53,125</td>
+              <td>1</td>
+              <td>0</td>
+              <td>-32.936388, 151.646409</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</section>

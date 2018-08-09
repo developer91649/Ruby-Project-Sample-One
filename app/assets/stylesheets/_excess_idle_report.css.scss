@@ -1,0 +1,101 @@
+.excess-row {
+  border-bottom: 1px solid rgb(202, 202, 202)!important;
+}
+.row {
+  .excess-header {
+    img {
+      width: 49px!important;
+    }
+    .download-icon {
+        font-size: 18px;
+        color: rgb(77, 77, 77);
+        font-weight: bold;
+        padding-left: 10px;
+      button {
+        background-color: white;
+        font-size: 12px!important;
+        font-weight: bold;
+      // &.disabled {
+      //   cursor: not-allowed;
+      //   pointer-events: none;
+      //   box-shadow: none;
+      //   opacity: 0.65;
+      //   color: #5d5d5d!important;
+      //   font-size: 12px!important;
+      // }
+      &.button-csv {
+        color: rgb(66, 136, 175);
+        }
+      }  
+    }
+  }
+  .daily-report {
+    span.italic {
+      font-style: italic;
+      color: rgb(66, 136, 175);
+      font-weight: bold;
+    }
+  }
+}
+.parent-row {
+  padding-top: 15px!important;
+  div.date-range-wrap {
+    padding-right: 16px!important;
+    .date-range-display {
+      color: rgb(66, 136, 175)!important;
+    }
+  }
+  div.total-excess {
+    float: left;
+    width: 16%;
+    strong {
+      font-size: 24px;
+      color: rgb(66, 136, 175);
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+  div.units-excess {
+    float: left;
+    width: 14%;
+    strong {
+      font-size: 24px;
+      color: rgb(66, 136, 175);
+    }
+  }
+  div.average-excess {
+    float: left;
+    width: 15%;
+    strong {
+      font-size: 24px;
+      color: rgb(66, 136, 175);
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+  div.projected-excess {
+    float: left;
+    width: 23%;
+    strong {
+      font-size: 24px;
+      color: rgb(66, 136, 175);
+    }
+  }
+  div.cost-excess {
+    float: left;
+    width: 32%;
+    p {
+      display: block;
+      height: 38px;
+    }
+    strong {
+      font-size: 24px;
+      color: rgb(66, 136, 175);
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+}

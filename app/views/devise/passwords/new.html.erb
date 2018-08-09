@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="seven columns">
+    <div class="user-login-wrap">
+      <h1>Forgot your password?</h1>
+      <p>Enter your email address you registered with and you will receive an email with instructions for resetting your Password.</p>
+      <%= semantic_form_for(
+          resource,
+          :as => resource_name,
+          :url => password_path(resource_name),
+          :html => { :class => "form-vertical" }
+      ) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.inputs do %>
+          <%= f.input :email %>
+        <% end %>
+        <%= f.actions do %>
+          <%= f.action :submit, 
+            :as => :button, 
+            :label => "Send me reset instructions", 
+            :button_html => { :class => "btn btn-default" } 
+          %>
+        <% end %>
+      <% end %>
+      <p class="reset-password-instructions"><strong>Important Note:</strong> If you didn’t get an email from us within a few minutes please be sure to check your spam filter.</p>
+      <p><%= link_to "Nevermind, send me back to the sign-in screen »", root_path %></p>
+    </div>
+  </div>
+</div>

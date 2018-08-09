@@ -1,0 +1,60 @@
+$print-mobile: false !default;
+$print-tablet: false !default;
+$print-desktop: false !default;
+
+@mixin mobile($root: false) {
+  @if $print-mobile {
+    @media only screen and (max-width: #{$screen-sm - 1}) {
+      @if $root { html:not(.force-desktop)   { @content; } }
+      @else     { html:not(.force-desktop) & { @content; } }
+    }
+  }
+  
+  @if $print-desktop {
+    @if $root { html.force-mobile   { @content; } }
+    @else     { html.force-mobile & { @content; } }
+  }
+}
+
+@mixin tablet($root: false) {
+  @if $print-tablet {
+    @media only screen and (min-width: #{$screen-sm}) and (max-width: #{$screen-lg - 1}) {
+      @if $root { html:not(.force-desktop)   { @content; } }
+      @else     { html:not(.force-desktop) & { @content; } }
+    }
+  }
+  
+  @if $print-desktop {
+    @if $root { html.force-mobile   { @content; } }
+    @else     { html.force-mobile & { @content; } }
+  }
+}
+
+
+@mixin desktop($root: false) {
+  @if $print-desktop {
+    @media only screen and (min-width: #{$screen-lg}) {
+      @if $root { html:not(.force-mobile)   { @content; } }
+      @else     { html:not(.force-mobile) & { @content; } }
+    }
+  }
+  
+  @if $print-mobile {
+    @if $root { html.force-desktop   { @content; } }
+    @else     { html.force-desktop & { @content; } }
+  }
+}
+
+@mixin tablet-mobile($root: false) {
+  @if $print-tablet or $print-mobile {
+    @media only screen and (max-width: #{$screen-lg + 1}) {
+      @if $root { html:not(.force-desktop)   { @content; } }
+      @else     { html:not(.force-desktop) & { @content; } }
+    }
+  }
+  
+  @if $print-desktop {
+    @if $root { html.force-mobile   { @content; } }
+    @else     { html.force-mobile & { @content; } }
+  }
+}

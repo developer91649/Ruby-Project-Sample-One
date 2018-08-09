@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="sixteen columns settings-wrap">
+    <div class="app-placeholder">
+      <%= render :partial => 'users/account_nav', :locals => { :active => 'company' } %>
+      <div class="ten columns alpha">
+        <div class="account-left">
+          <h1 class="underlined_small">Edit locomotive</h1>
+          <%= bootstrap_form_errors @locomotive %>
+            <%= semantic_form_for(
+                @locomotive,
+                :url => locomotive_path(@locomotive),
+                :method => :put,
+                :html => { :class => "form-vertical" }
+            ) do |f| %>
+            <%= f.inputs do %>
+              <%= f.input :title %>
+              <%= f.input :locomotive_type %>
+              <%= f.input :description %>
+            <% end %>
+            <%= f.actions do %>
+              <%= f.action :submit, :as => :button, :label => "Save", :button_html => { :class => "btn btn-primary" } %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

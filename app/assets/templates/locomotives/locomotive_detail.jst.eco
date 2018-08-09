@@ -1,0 +1,126 @@
+<div class="account-<%= @loco.get('account_id') %>">
+  
+  <div class="quickview-placeholder container"></div>
+
+  <section class="container">
+    <div class="sixteen columns alpha">
+      <div class="system-status-list-wrap">
+        <div class="system-diagram-wrap group reload">
+          <p class="refresh-inline refresh-system-status">Loading ... </p>
+          <ul class="clearfix system-status-list1 system-status-list">
+            <li><p class="loading-inline">Loading ... </p></li>
+          </ul>
+        </div><!-- /diagram -->
+      </div><!-- /system-status-wrap -->
+    </div><!-- /columns -->
+  </section><!-- /content -->
+
+  <section class="container loco-status-section">
+    <div class="offline-message"><p>Locomotive is <img src="/assets/black_offline_gray.png" alt="offline-icon">Offline.</p><p>  <i class="fa fa-exclamation-circle"></i> All data is of Last Known Value.</p></div>
+    <div class="sixteen columns alpha" style="position: relative;">
+      <div class="featured-wrap locomotive-data-wrap">
+        <h3>Locomotive</h3>
+        <p class="refresh-inline refresh-locomotive-data">Loading ... </p>
+        <ul class="locomotive-data-list clearfix reload">
+          <li><p class="loading-inline">Loading ... </p></li>
+        </ul>
+      </div>
+
+      <!------- Fuel Section ------->
+      <div class="fuel-section">
+        <p class="loading-inline fuel-consumption-loading">Loading ... </p>
+
+        <ul class="fuel-consumption-list"></ul>
+        <a id ="toggle-fuel-history" data-toggle="fuel-history">Refuel History Detail <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+        <div id="fuel-history-wrap" style="display: none;">
+          <table class="standard fuel-history table table-bordered">
+            <thead>
+              <tr class="header">
+                <td>Refuel Date</td>
+                <td>Added</td>
+                <td>Final</td>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div><!------- /Fuel Section ------->
+
+      <div class="featured-wrap engine-data-wrap">
+        <p class="refresh-inline refresh-engine-data">Loading ... </p>
+        <div class="clearfix engine-lists account-<%= @loco.get('account_id') %>">
+          <p class="loading-inline">Loading ... </p>
+        </div>
+      </div>
+    </div><!-- /columns -->
+  </section><!-- /content -->
+
+  <section class="container loco-status-section">
+    <div class="sixteen columns alpha">
+      <div class="param-super-wrap">
+        <div class="underline-header clearfix">
+          <h3 class="" id="health-header">Health Parameters</h3>
+          <a id="toggle-health" class="toggle view left" data-toggle="health"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+          <p class="refresh-inline refresh-health">Loading ... </p>
+          <a class="right link-right" href="/health/"><span class="hide-in-mobile">View All Health Parameters</span> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+        </div>
+        <div id="health-wrap" class="clearfix reload">
+          <p class="loading-inline">Loading ... </p>
+        </div>
+      </div><!-- /health-super-wrap -->
+    </div><!-- /columns -->
+  </section><!-- /content -->
+
+  <section class="container loco-status-section">
+    <div class="sixteen columns alpha">
+      <div class="param-super-wrap">
+        <div class="underline-header clearfix">
+          <h3 class="" id="status-header">Status Parameters</h3>
+          <a id="toggle-status" class="toggle view left" data-toggle="status"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+          <p class="refresh-inline refresh-status">Loading ... </p>
+          <a class="right link-right" href="/status/"><span class="hide-in-mobile">View All Status Parameters</span> <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a>
+        </div>
+        <div id="status-wrap" class="clearfix reload">
+          <p class="loading-inline">Loading ... </p>
+        </div>
+      </div><!-- /status-super-wrap -->
+    </div><!-- /columns -->
+  </section><!-- /content -->
+  
+</div>
+
+<div id="confirm-loco-service-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><span class="glyphicon glyphicon-exclamation-sign"></span> Warning</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-confirm confirm-change">Confirm<span class="glyphicon glyphicon-chevron-right"></span></button>
+        <button type="button" class="btn btn-cancel cancel-change" aria-hidden="true" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="loco-detail-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times; Close</span></button>
+      </div>
+      <div class="modal-body">
+        <label class="title">Locomitive Details & Software Versions</label>
+        <table>
+        </table>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

@@ -1,0 +1,5 @@
+<% if @fault.needs_notification? %>
+$("#<%= @fault.id %>").text("Unsubscribe")
+<% else %>
+$("#<%= @fault.id %>").text("Subscribe")
+<% end %>

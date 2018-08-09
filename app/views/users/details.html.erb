@@ -1,0 +1,65 @@
+  <div class="row">
+  <div class="sixteen columns settings-wrap alpha">
+    <div class="app-placeholder">
+      <%= render :partial => 'users/account_nav', :locals => { :active => 'details' } %>
+      <%= simple_form_for @current_user,
+        :wrapper => :bootstrap3_horizontal, :url => current_path(@current_user),
+        :defaults => {
+          right_column_html: { class: "col-md-9" },
+          label_html:        { class: "col-md-3" }
+        },
+        html:              { class: "form-horizontal account-form row", role: "form" } do |f| %>
+      <div class="ten columns alpha">
+        <div class="account-left">
+          <h1 class="small">Account Details</h1>
+          <dl class="dl-horizontal dl-style">
+            <dt>Join Date</dt>
+            <dd><%= @current_user.created_at.strftime("%m-%d-%Y") %></dd>
+            <dt>Current sign in at</dt>
+            <dd><%= @current_user.current_sign_in_at.strftime("%m-%d-%Y") %></dd>
+            <dt>Last sign in at</dt>
+            <dd><%= @current_user.last_sign_in_at.strftime("%m-%d-%Y") %></dd>
+          </dl>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%= f.input :email %>
+          <%= f.input :country, :selected => "United States" %>
+          <!-- this is a hidden field, shows conditionally via javascript depending on if the country chosen is United States or not -->
+          <%= f.input :state, :collection => us_states %>
+          <%= f.input :city %>
+          <%= f.input :job_title %>
+          <div class="string input optional stringish form-group">
+            <label class="control-label col-md-3">Password</label>
+            <div class="col-md-9">
+              <%= link_to 'Change Password', edit_user_passwords_edit_path, :class => "btn btn-default" %>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="six columns omega">
+        <div class="account-right">
+          <h2 class="small">Site Preference</h2>
+          <%= f.input :pref_email_notifications, :label => "Receive email notifications for faults" %>
+          <%= f.input :pref_header_image, :class => "checkbox", :label => "Company Masthead" %>
+          <%= f.input :pref_fault_severity_filter, :label => "Default Fault Severity Filter on Fault Summary", :collection => ["Show All", "Critical & Warning", "Critical", ">60sec Alerts"] %>
+          <%= f.input :pref_default_health_param, :label => "Default Health Parameter", :collection => @health_params %>
+          <%= f.input :pref_default_status_param, :label => "Default Status Parameter", :collection => @status_params %>
+          <%= f.input :pref_time_display, :label => "Choose how time is displayed sitewide", :collection => User.time_options %>
+          <%= f.input :pref_timezone, :label => "Time Zone Settings", :collection => ActiveSupport::TimeZone.all %>
+          <%= f.input :pref_daylight_savings, :label => "Observe Daylight Savings" %>
+
+        </div>
+      </div>
+      <div class="sixteen columns alpha footer-style">
+        <%= button_tag(type: 'submit', class: "btn btn-primary footer-cls") do %>
+          Save Settings<i class="glyphicon glyphicon-menu-right"></i> 
+        <% end %>
+        <a class="btn btn-default button-cal cancel-change cancel_btn"  aria-hidden="true"><span class="glyphicon glyphicon-remove"></span>Cancel</a>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+

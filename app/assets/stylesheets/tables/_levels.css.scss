@@ -1,0 +1,206 @@
+.table-wrap {
+  table.standard tr.level_zero td.fault-severity-td span,
+  table.standard tr.level_one td.fault-severity-td span,
+  table.standard tr.level_two td.fault-severity-td span,
+  table.standard tr.level_three td.fault-severity-td span {
+    padding: 0 0 0 20px;
+    @include mobile  { padding: 0; background-position: center center; }
+  }
+}
+/* Red (Level 1) */
+.table-wrap {
+  table.standard tr.Alarm td, table.standard tr.level_one {
+    background: $state-danger-bg;
+  }
+}
+.table-wrap {
+  table.standard tr.level_one {
+    @include mobile {
+      border-top: 1px solid $state-danger-highlight;
+      border-bottom: 1px solid $state-danger-border;
+    }
+  }
+}
+.table-wrap {
+  table.standard tr.level_one td {
+    color: $state-danger-text;
+    // border-right: 1px solid $state-danger-border;
+    // border-left: 1px solid $state-danger-border;
+
+    @include mobile {
+      &.time-td, &.time-td-archive { border-top: 1px solid $state-danger-border; }
+    }
+  }
+}
+.table-wrap {
+  table.standard tr.level_one td.locostatus-td span,
+  table.standard tr.level_one td.fault-severity-td span {
+    background: transparent url(/assets/red-icon.gif) no-repeat 0 2px;
+  }
+}
+.table-wrap {
+  table tr.level_one a,
+  table tr.level_one td {
+    color: #b72126;
+    text-shadow:  0 1px 0 #fed3cd;
+  }
+}
+.table-wrap {
+  table tr.level_one .round4 {
+    // border-top: 1px solid #fdeae9;
+    // border-right: 1px solid #ffc8c0;
+    // border-left: 1px solid #ffc8c0;
+    // border-bottom: 1px solid #cf9093;
+    // background: #fdd3cd url(/assets/red_btn_sl.gif) repeat-x 0 bottom;
+    background: none;
+    color: #b72126;
+    text-shadow:  0 1px 0 #fee6e3;
+  }
+}
+/* Yellow (Level 2) */
+.table-wrap {
+  table.standard tr.Alarm td, table.standard tr.level_two, table.standard tr.Yellow {
+    background: $state-warning-bg;
+  }
+}
+.table-wrap {
+  table.standard tr.level_two {
+    @include mobile {
+      border-top: 1px solid $state-warning-highlight;
+      border-bottom: 1px solid $state-warning-border;
+    }
+  }
+}
+.table-wrap {
+  table.standard tr.Alarm td, table.standard tr.level_two td, table.standard tr.Yellow td {
+    color: $state-warning-text;
+    // border-right: 1px solid $state-warning-border;
+    // border-left: 1px solid $state-warning-border;
+
+    @include mobile {
+      &.time-td, &.time-td-archive { border-top: 1px solid $state-warning-border; }
+    }
+  }
+}
+
+/* locostatus-td - fleet manager & fault severity - fault summary  */
+.table-wrap {
+  table.standard tr.level_two td.locostatus-td span,
+  table.standard tr.level_two td.fault-severity-td span {
+    background: transparent url(/assets/yellow-icon.png) no-repeat 0 1px;
+  }
+}
+.table-wrap {
+  table tr.level_two a,
+  table tr.level_two td {
+    color: #ab6a03;
+    text-shadow: 0 1px 0 #fff7c1;
+  }
+}
+.table-wrap {
+  table tr.level_two .round4 {
+    // border-top: 1px solid #fff4ad;
+    // border-bottom: 1px solid #e3ae20;
+    // border-left: 1px solid #f6e166;
+    // border-right: 1px solid #f6e166;
+    // background: #fbed90 url(/assets/yellow_btn_sl.gif) repeat-x 0 bottom;
+    background: none;
+    color: #ab6a03;
+    text-shadow:  0 1px 0 #fffffc;
+  }
+}
+/* Locomotive Status (Level 0) */
+.table-wrap {
+  table.standard tr.level_zero {
+    background: transparent url(/assets/default-bk-slice.gif) repeat-x 0 0;
+  }
+}
+.table-wrap {
+  table.standard tr.level_zero td {
+    color: #929292;
+    border-right: 1px solid #F5F5F5;
+    border-left: 1px solid #e3e3e3;
+  }
+}
+.table-wrap {
+  table.standard tr.level_zero td.loconumber span {
+    background: transparent url(/assets/grey-loco.gif) no-repeat center center;
+  }
+}
+.table-wrap {
+  table.standard tr.level_zero td.locostatus-td span {
+    background: transparent url(/assets/interrupt-icon.gif) no-repeat 0 0;
+  }
+}
+.table-wrap {
+  table.standard tr.level_zero td.fault-severity-td span {
+    background: transparent url(/assets/interrupt-icon.gif) no-repeat 2px 1px;
+  }
+}
+.table-wrap {
+  a#view-archive {
+    display: block;
+    cursor: text;
+    background: transparent url(/assets/view-archive.gif) no-repeat 0 0;
+    height: 23px;
+    line-height: 23px;
+    width: 183px;
+    text-indent: -99999px;
+  }
+}
+.table-wrap {
+  table tr.level_zero a,
+  table tr.level_zero td {
+    color: #929292;
+    text-shadow: 0 1px 0 #e7e7e7;
+  }
+}
+.table-wrap {
+  table tr.level_zero .round4 {
+    border-top: 1px solid #f4f2f2;
+    border-bottom: 1px solid #aaaaaa;
+    background: #f3f3f3 url(/assets/lt_grey_btn_sl.gif) repeat-x 0 bottom;
+    color: #929292;
+    text-shadow:  0 1px 0 #ececec;
+  }
+}
+/* locostatus-td - fleet manager & fault severity - fault summary  */
+.table-wrap {
+  table.standard tr.level_three td.locostatus-td span {
+    background: transparent url(/assets/active-icon.gif) no-repeat 2px 4px;
+  }
+}
+.table-wrap {
+  table.standard tr.level_zero, table.standard tr.level_three {
+    @include mobile {
+      border-top: 1px solid $state-default-highlight;
+      border-bottom: 1px solid $state-default-border;
+    }
+  }
+}
+.table-wrap {
+  table.standard tr.level_three td {
+    @include mobile {
+      &.time-td, &.time-td-archive { border-top: 1px solid $state-default-border; }
+    }
+  }
+}
+.table-wrap {
+  table.standard tr.level_three td.fault-severity-td span {
+    background: transparent url(/assets/minor-icon.gif) no-repeat 5px 2px;
+  }
+}
+/* Out of Service */
+.table-wrap {
+  table.standard tr.locomotive_info.level_out-of-service {
+    &, a.round4 {
+      background: #e0e0e0;
+    }
+
+    td.locostatus-td span {
+      background: transparent;
+      text-align: center;
+      padding: 0;
+    }
+  }
+}

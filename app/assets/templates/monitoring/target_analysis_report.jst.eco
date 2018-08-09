@@ -1,0 +1,23 @@
+<span class="close-btn"></span>
+<div class="dialog-header">
+  <div class="ta-logo-wrap"><i class="ta-logo" /><span class="point-id"><%= @point.marker.id %></span></div>
+  <h2>Target Analysis: <%= @title %></h2>
+</div>
+<div class="dialog-section point-summary">
+  <dl>
+    <dt class="loco">Locomotive</dt>
+    <dd class="loco"><%= @locoTitle %></dd>
+
+    <dt class="time">Time</dt>
+    <dd class="time"><%= moment.utc(@point.x).format("YYYY-MM-DD HH:mm:ss") %> UTC</dd>
+
+    <dt class="value">Value</dt>
+    <dd class="value"><%= @point.y %> <%= @point.series.chart.userOptions.units %></dd>
+  </dl>
+</div>
+<div class="dialog-data">
+  <div class="loader">
+    <img class="spinner" src="/assets/ajax-loader-sm-transparent.gif" />
+    Fetching data ...
+  </div>
+</div>

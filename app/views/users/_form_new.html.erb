@@ -1,0 +1,16 @@
+<%= bootstrap_form_errors @user %>
+<%= simple_form_for @user, :wrapper => :bootstrap3_horizontal, :html => { :class => "form-vertical" } do |f| %>
+  <%= f.input :email %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+
+  <%= semantic_form_for @user, :wrapper => :bootstrap3_horizontal, :html => { :class => "form-vertical" } do |f| %>
+      <%= f.input :approved_by_admin, :class => "checkbox", :label => "Approved by MP", :input_html => { :disabled => @unselectable[:mpi] } %>
+      <%= f.input :approved_by_account_admin, :class => "checkbox", :label => "Approved by account admin", :input_html => { :disabled => @unselectable[:account] } %>
+  <% end %>
+    
+  <%= f.association :roles, as: :check_boxes,
+    :label_method => proc { |r| r.name.humanize }, :collection => @collection %>
+    
+  <%= f.submit "Request User", :class => "btn btn-primary" %>
+<% end %>

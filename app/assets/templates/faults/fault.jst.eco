@@ -1,0 +1,38 @@
+<td class="system-td"><%= @fault.get('system_name') %></td>
+<td class="fault-severity-td ">
+  <span title="<%= @fault.get("fault_value") %>">
+    <%= @fault.get("fault_status_text") %>
+  </span>
+</td>
+<td class="fault-map-wrap-td"><a class="round4" href="#">Map</a><div class="map-placeholder" style="display:none;"></div></td>
+<td class="code-display-td"><%= @fault.get('alarm_id') %></td>
+<td class="title-td"><%= @fault.get('title') %></td>
+
+<% if @fault.get("alarm_status") is 1: %>
+
+  <td class="time-td">
+    <div style="position:relative">
+      <div class="time-wrap" data-utc="<%= @timeUTC(@fault.get("time_utc_on")) %>">
+        <span class="time time-on"><%= @time(@user, @fault.get("time_utc_on"), @locomotive) %></span>
+      </div>
+      <div class="time-list-wrap"></div>
+    </div>
+  </td>
+
+<% else: %>
+
+  <td class="time-td time-td-archive">
+    <div style="position:relative">
+      <div class="time-wrap" data-utc="<%= @timeUTC(@fault.get("time_utc_on")) %>">
+        <span class="time time-on"><%= @time(@user, @fault.get("time_utc_on"), @locomotive) %></span>
+        <span class="time time-off"><%= @time(@user, @fault.get("time_utc_off"), @locomotive) %></span>
+      </div>
+      <div class="time-list-wrap"></div>
+    </div>
+  </td>
+
+<% end %>
+
+<td class="diagnostics-link-td">
+  <a href="/locomotives/<%= @locomotive.get('id') %>/alarms/<%= @fault.get('liis_id') %>" class="round4">Diagnostics &raquo;</a>
+</td>

@@ -1,0 +1,78 @@
+
+<section class="locomotive-subnav clearfix row">
+  <div class="sixteen columns alpha">
+    <nav class="navbar navbar-default complex-header">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" id="loco-subnav-toggle" data-toggle="collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <h2 class="left"><%= @locomotive.get('title') %></h2>
+          <h3 class="left"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><span class="hide-in-mobile">  Map/Quickview</span></h3>
+          <a id="toggle-quickview" class="view left" data-toggle="quickview"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="locomotive-detail-nav-div">
+          <ul class="nav nav-pills navbar-nav pull-right" id="locomotive-detail-nav">
+            <li role="presentation"><a data-link="locomotive-detail" href="/locomotives/<%= @locomotive.get('id') %>"><span>Locomotive Details</span></a></li>
+            <li role="presentation" class="sub-menu" data-link="locomotive-detail"><a data-link="maintenance" href="/locomotives/<%= @locomotive.get('id') %>/maintenance"><span>Log File Downloads</span></a></li>
+            <li role="presentation" class="active"><a data-link="fault-summary" href="/locomotives/<%= @locomotive.get('id') %>/fault-summary"><span>Fault Summary</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div><!-- /columns -->
+</section>
+<% if @locomotive.isOutOfService():  %>
+  <div class="outofservice-section row active">
+<% else: %>
+  <div class="outofservice-section row">
+<% end %>
+  <a class="outofservice"><i class="fa fa-unlink"></i>Out of Service</a>
+  <a class="intoservice" id="place-outofservice-link"><i class="fa fa-link"></i>Place Locomotive into Service</a>
+</div>
+<section class="row">
+  <div id="quickview-wrap" class="container">
+    <div class="nine columns alpha">
+      <div id="locomotive-map-canvas"></div>
+    </div>
+    <div class="seven columns omega">
+      <div class="locomotive-quickview-details-wrap">
+        <div class="temp-navigation">
+          <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">TEMP NAVIGATION</div>
+
+            <!-- List group -->
+            <ul class="list-group">
+
+            </ul>
+          </div>
+        </div>
+        <p class="refresh-inline refresh-locomotive">Loading</p>
+        <div class="locomotive-quickview-details">
+          <p class="loading-inline">Loading ... </p>
+        </div>
+      </div>
+    </div>
+  </div><!-- /quickview-wrap -->
+</section><!-- /content -->
+<div id="loco-subnav-modal" class="modal modal-loco-custom fade bs-example-modal-sm" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"> </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-pills" id="">
+            <li role="presentation"><a data-link="locomotive-detail" href="/locomotives/<%= @locomotive.get('id') %>"><span>Locomotive Details</span></a></li>
+            <li role="presentation"><a data-link="fault-summary" href="/locomotives/<%= @locomotive.get('id') %>/fault-summary"><span>Fault Summary</span></a></li>
+          </ul>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

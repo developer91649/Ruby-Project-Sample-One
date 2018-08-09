@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="sixteen columns settings-wrap alpha" style="width: 100%;">
+    <div class="app-placeholder">
+      <%= render :partial => 'users/account_nav', :locals => { :active => 'company' } %>
+      <div class="col-md-8 col-sm-8">
+        <div class="account-left">
+          <h1 class="small">Locomotives</h1>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>IP Address</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @locomotives.each do |locomotive| %>
+                <tr class="table-content">
+                  <td><%= locomotive.id_assigned %></td>
+                  <td><%= locomotive.title %></td>
+                  <td><%= locomotive.locomotive_type.name %></td>
+                  <td><%= locomotive.description %></td>
+                  <td><%= locomotive.address %></td>
+                  <td class="edit-cls"><%= link_to 'Edit', edit_locomotive_path(locomotive.id) %><span class="glyphicon glyphicon-menu-right"></span></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4 company-detail">
+        <div class="account-right">
+          <h2 class="small">Company Preferences & Members</h2>
+          <p class="member-cls"><%= link_to "View/Edit Company Members", users_path, :class => "btn btn-primary" %><span class="glyphicon glyphicon-menu-right"></span></p>
+          <p class="notify-cls"><%= link_to "Manage Fault Notifications", faults_path, :class => "btn btn-primary" %><span class="glyphicon glyphicon-menu-right"></span></p>
+          <p class="visible-cls"><%= link_to "Manage Fault Visibility", faults_visibilities_path, :class => "btn btn-primary" %><span class="glyphicon glyphicon-menu-right"></span></p>
+          <h2 class="small">Company Information</h2>
+          <ul class="list-plain">
+            <li>Company <%= @account.name %></li>
+            <li>Address <%= @account.company_address_1 %></li>
+            <li>Address <%= @account.company_address_2 %></li>
+            <li><%= @account.company_city %> <%= @account.company_state %> <%= @account.company_zip %></li>
+            <li><%= @account.company_country %></li>
+            <li>Phone <%= @account.company_phone %></li>
+            <li>Fax <%= @account.company_fax %></li>
+            <li>Email <%= @account.company_email %></li>
+            <li>URL <%= @account.company_url %></li>
+            <li><%= link_to 'Edit Company Info', edit_account_path(@account), :class => "btn btn-primary" %></li>
+          </ul>
+          <dl class="dl-horizontal">
+            <dt>Company</dt>
+            <dd><%= @account.name %></dd>
+            <dt>Address</dt>
+            <dd><%= @account.company_address_1 %></dd>
+            <dt></dt>
+            <dd><%= @account.company_address_2 %></dd>
+            <dt></dt>
+            <dd><%= @account.company_city %> <%= @account.company_state %> <%= @account.company_zip %></dd>
+            <dt>Phone</dt>
+            <dd><%= @account.company_phone %></dd>
+            <dt>Fax</dt>
+            <dd><%= @account.company_fax %></dd>
+            <dt>Email</dt>
+            <dd><%= @account.company_email %></dd>
+            <dt>URL</dt>
+            <dd><%= @account.company_url %></dd>
+          </dl>
+          <br />
+          <h2 class="underlined_small">Company Members & Faults</h2>
+
+      </div>
+    </div>
+  </div>
+</div>
+

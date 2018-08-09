@@ -1,0 +1,24 @@
+<section class="row">
+  <div class="sixteen columns settings-wrap alpha">
+    <div class="app-placeholder">
+      <%= render :partial => 'users/account_nav', :locals => { :active => 'details' } %>
+      <div class="ten columns alpha">
+        <div class="account-left">
+          <h1 class="underlined_small">Change your password</h1>
+          <%= render "users/password_guidelines" %>
+          <%= semantic_form_for @change_password, :url => user_passwords_edit_path, :method => :put, :html => { :class => "form-horizontal" } do |f| %>
+            <%= f.inputs do %>
+              <%= f.input :current_password, :label => "Current Password" %>
+              <%= f.input :password, :label => "New Password" %>
+              <%= f.input :password_confirmation, :label => "New Password Confirmation" %>
+            <% end %>
+
+            <%= f.actions do %>
+              <%= f.action :submit, :as => :button, :label => "Change Password", :button_html => { :class => "btn btn-primary" } %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

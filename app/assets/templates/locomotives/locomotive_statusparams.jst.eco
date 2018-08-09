@@ -1,0 +1,18 @@
+<% for param in @params.models: %>
+  <li class="clearfix" data-variable="<%= param.get('qes_variable') %>">
+    <a href="/status/<%= param.get('qes_variable') %>/<%= @locomotive.get('id') %>/">
+      <strong class="title columns-four alpha"><%= param.get('title') || "Parameter" %></strong>
+      <strong class="trainline columns-two hide-in-mobile">
+        <% if param.get('source'): %>
+          <%= param.get('source') %>
+        <% else: %>
+          Trainline
+        <% end %>
+      </strong>
+      <strong class="status columns-two omega">
+        <em class="<% if param.get('value') is "0" or param.get('value') is 0: %>OFF<% else if param.get("value") is "1" or param.get('value') is 1: %>ON<% end %>">
+          <% if param.get('value') is "0" or param.get('value') is 0: %>OFF<% else if param.get("value") is "1" or param.get('value') is 1: %>ON<% end %></em>
+      </strong>
+    </a>
+  </li>
+<% end %>

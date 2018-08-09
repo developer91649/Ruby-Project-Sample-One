@@ -1,0 +1,51 @@
+
+// --------------------------------- COLORS --------------------------------- //
+$brand-default: lighten(#000, 30%);
+$brand-primary: #428bca;
+$brand-danger: #b72126;
+$brand-warning: #ab6a03;
+$brand-success: #5cb85c;
+
+$gray-dark     : $brand-default;
+$gray          : lighten(#000, 50%);
+$gray-light    : lighten(#000, 70%);
+$gray-lighter  : lighten(#000, 86%);
+$gray-lightest : lighten(#000, 96.5%);
+
+$border-radius-base: 4px;
+$border-radius-small: 3px;
+
+$dropdown-link-hover-bg: $brand-primary;
+$dropdown-link-hover-color: white;
+
+$btn-default-bg: #f4f4f4;
+
+// --------------------------------- STATES --------------------------------- //
+// States
+$state-default-text       : $brand-default;
+$state-default-bg         : adjust-color($brand-default, $lightness: +60%);
+$state-default-border     : darken($state-default-bg, 10%);
+$state-default-highlight  : rgba(255, 255, 255, 0.3);
+
+$state-success-text       : $brand-success;
+$state-success-bg         : adjust-color($brand-success, $lightness: +42%, $saturation: +20%);
+$state-success-border     : darken(adjust-hue($state-success-bg, +10), 25%);
+$state-success-highlight  : rgba(255, 255, 255, 0.3);
+
+$state-danger-text       : $brand-danger;
+$state-danger-bg         : adjust-color($brand-danger, $lightness: +40%, $saturation: +20%);
+$state-danger-border     : darken(adjust-hue($state-danger-bg, +10), 10%);
+$state-danger-highlight  : rgba(255, 255, 255, 0.3);
+
+$state-warning-text      : $brand-warning;
+$state-warning-bg        : adjust-color($brand-warning, $hue: +15, $lightness: +35%, $saturation: -7%);
+$state-warning-border    : adjust-color($brand-warning, $hue: +15, $lightness: +10%, $saturation: -10%);
+$state-warning-highlight : rgba(255, 255, 255, 0.5);
+
+// ------------------------------- BREAKPOINTS ------------------------------ //
+$screen-sm: 480px;
+$screen-md: 768px;
+$screen-lg: 959px;
+
+
+$box-shadow-standard: 1px 1px 3px rgba(0, 0, 0, 0.3);

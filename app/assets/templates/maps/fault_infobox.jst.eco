@@ -1,0 +1,11 @@
+<div class='loco-info-pack'>
+  <div class="clearfix">
+    <div class='loco-info-num'><%= @locomotive.get("title") %></div>
+    <div class='loco-info-status'>
+      <img src='/assets/<%= @fault.get("icon_image") %>'>&nbsp;&nbsp;<%= @fault.get("fault_status_text") %>
+    </div>
+  </div>
+  <div class='loco-info-fault'><%= @fault.get("title") %></div>
+  <div class='loco-info-gps'><%= @fault.get("gps") %></div>
+  <div class='loco-info-time'><%= @time(time: @fault.get("time_utc_on"), user: @user, locomotive: @locomotive) %></div>
+</div>

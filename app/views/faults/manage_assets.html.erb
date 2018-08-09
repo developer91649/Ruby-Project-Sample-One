@@ -1,0 +1,134 @@
+<section class="row">
+  <div class="sixteen columns alpha">
+    <div class="app-placeholder">
+
+      <h3>          
+        Monitoring Params
+        <small>(<%= link_to "Export CSV", api_monitoring_params_path(format: "csv") %>)</small>
+      </h3>
+
+      <div class="row">
+        <div class="eight columns alpha">
+          <%= form_tag import_api_monitoring_params_path, multipart: true, class: "panel panel-default" do %>
+            <div class="panel-heading">Import Formatted CSV</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label for="file">File</label>
+                <%= file_field_tag :file %>
+                <p class="help-block">File should be formatted to match exported CSV's headers</p>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <%= submit_tag "Import", class: "btn btn-primary btn-sm" %>
+            </div>
+          <% end %>
+        </div>
+
+        <div class="eight columns omega">
+          <%= form_tag import_master_api_monitoring_params_path, multipart: true, class: "panel panel-default" do %>      
+            <div class="panel-heading">Import Raw Monitoring Params</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Locomotive Type:</label>
+                <%= select_tag "Locomotive Type", options_from_collection_for_select(@loco_types,"id","name") %>
+              </div>
+              <p>This import tool simplifies the smithing necessary to the spreadsheets with parameter definitions.</p>
+              <div class="form-group">
+                <%= label :param_csv, "Monitoring Param CSV" %>
+                <%= file_field_tag :param_csv %>
+                <p class="help-block">Monitoring params as CSV from:<br /><em>MP40PHTC-T4_monitoring-params_2016.csv</em></p>
+              </div>
+              <div class="form-group">
+                <%= label :ta_map_csv, "TA Map CSV" %>
+                <%= file_field_tag :ta_map_csv %>
+                <p class="help-block">TA map as CSV from:<br /><em>MP40PHTC-T4_ta_maps_2016.csv</em></p>
+              </div>
+              <div class="form-group">
+                <%= label :category_map_csv, "Category Map CSV" %>
+                <%= file_field_tag :category_map_csv %>
+                <p class="help-block">Category map for health params as CSV. No headers; columns are [name, category]. Must be derived manually from:<em>MP40PHTC-T4_category_map_2016.csv</em></p>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <%= submit_tag "Import", class: "btn btn-sm btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <h3>          
+        Faults
+        <small>(<%= link_to "Export CSV", faults_path(format: "csv") %>)</small>
+      </h3>
+
+      <div class="row">
+        <div class="eight columns alpha">
+          <%= form_tag import_faults_path, multipart: true, class: "panel panel-default" do %>
+            <div class="panel-heading">Import Formatted CSV</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label for="file">File</label>
+                <%= file_field_tag :file %>
+                <p class="help-block">File should be formatted to match exported CSV's headers</p>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <%= submit_tag "Import", class: "btn btn-sm btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="eight columns omega">
+
+          <%= form_tag import_from_master_faults_path, multipart: true, class: "panel panel-default" do %>
+            <div class="panel-heading">Import From Master Fault List</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Locomotive Type:</label>
+                <%= select_tag "Locomotive Type", options_from_collection_for_select(@loco_types,"id","name") %>
+              </div>
+              <div class="form-group">
+                <label for="file">File</label>
+                <%= file_field_tag :file %>
+                <p class="help-block">CSV derived from:<br /><em>MP40PHTC-T4_faults_2016.csv</em><br />Columns until param associations are defined.</p>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <%= submit_tag "Import", class: "btn btn-sm btn-primary" %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+
+      <h3>          
+        Alarm Health Snapshot (Faults x Params)
+      </h3>
+
+      <div class="row">
+        <div class="eight columns alpha">&nbsp;</div>
+        <div class="eight columns omega">
+
+          <%= form_tag associate_params_faults_path, multipart: true, class: "panel panel-default" do %>
+            <div class="panel-heading">Import AHS Fault x Param list</div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Locomotive Type:</label>
+                <%= select_tag "Locomotive Type", options_from_collection_for_select(@loco_types,"id","name") %>
+              </div>
+              <div class="form-group">
+                <label for="file">File</label>
+                <%= file_field_tag :file %>
+                <p class="help-block">CSV derived from:<br /><em>MP40PHTC-T4_faults_x_params_2016.csv</em><br />Only columns needed for association.</p>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <%= submit_tag "Import", class: "btn btn-sm btn-primary" %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

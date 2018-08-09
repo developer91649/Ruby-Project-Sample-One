@@ -1,0 +1,25 @@
+<%= active_admin_form_for(@monitoring_param, url: admin_monitoring_param_path(@monitoring_param)) do |f| %>
+
+  <%= f.inputs "Faults" do %>
+
+    <%= f.input(
+      :faults,
+      as: :check_boxes,
+      collection: Fault.for_account(@monitoring_param.account)
+    ) %>
+
+  <% end %>
+
+  <fieldset class="actions">
+    <ol>
+      <li class="action input_action " id="fault_submit_action">
+        <input name="commit" type="submit" value="Update Fault">
+      </li>
+
+      <li class="cancel">
+        <%= link_to("Cancel", admin_monitoring_params_path) %>
+      </li>
+    </ol>
+  </fieldset>
+
+<% end %>

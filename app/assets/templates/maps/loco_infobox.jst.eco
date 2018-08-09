@@ -1,0 +1,16 @@
+<% for index, locomotive of @locomotives: %>
+  <% break if index > (@maxLocos - 1) %>
+  <div class='loco-info-pack'>
+    <div class="loco-info-header">
+      <div class='loco-info-num'><%= locomotive.get("title") %></div>
+      <div class='loco-info-status status-<%= locomotive.get("status_locomotive") %>'>
+        <img src='/assets/<%= locomotive.get("icon_image") %>'>&nbsp;&nbsp;<%= locomotive.get("loco_status_text") %>
+      </div>
+    </div>
+    <div class='loco-info-time'><%= @time(locomotive: locomotive, user: @user) %></div>
+  </div>
+<% end %>
+
+<% if _.size(@locomotives) > @maxLocos: %>
+  <div class="loco-more-notification">Plus <%= _.size(@locomotives) - @maxLocos %> more</div>
+<% end %>

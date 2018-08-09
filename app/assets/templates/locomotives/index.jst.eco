@@ -1,0 +1,31 @@
+<section class="content row">
+  <div class="sixteen alpha columns">
+    <div class="fleet-map-wrap row">
+      <a id="toggle-fleetmap" class="btn btn-default small view right map-style" data-toggle="fleetmap"><span class="glyphicon glyphicon-map-marker"></span>Fleet Map</a>
+    </div>
+  </div><!-- /columns -->
+  <div class="sixteen columns alpha">
+    <div id="fleetmap-wrap">
+      <div id="map-canvas" style="width: 100%;"></div>
+    </div>
+
+    <div class="table-wrap">
+      <div class="table-loading"><p>Loading ...</p></div>
+      <table class="locomotives standard">
+        <thead class="table-thead">
+          <tr class="header">
+            <th class="loco-name sorting sorting_asc"><span>Locomotive</span></th>
+            <th class="loco-status sorting"><span>Status</span></th>
+            <th class="loco-type sorting"><span>Type</span></th>
+            <th class="loco-waypoint sorting"><span>Location</span></th>
+            <th class="loco-last-updated header-time sorting"><span>Last Fault ON Time (<%= @user.get("pref_time_display") %>)</span></th>
+            <th><span>Active Faults</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr class="locomotive_info level_zero" id="loco_"> -->
+        </tbody>
+      </table>
+    </div><!-- /table-wrap -->
+  </div><!-- /columns -->
+</section><!-- /content -->

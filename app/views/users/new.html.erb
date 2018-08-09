@@ -1,0 +1,16 @@
+<section class="row">
+  <div class="sixteen columns settings-wrap alpha">
+    <div class="app-placeholder">
+      <%= render :partial => 'users/account_nav', :locals => { :active => 'new' } %>
+
+      <div class="ten columns alpha">
+        <div class="account-left">
+          <h1 class="underlined_small">Request a New User</h1>
+          <div class="new-user-form-wrap">
+            <%= render 'form_new' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

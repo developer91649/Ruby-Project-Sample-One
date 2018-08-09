@@ -1,0 +1,14 @@
+<section class="row">
+  <div class="sixteen columns alpha">
+    <div class="account-subnav clearfix">
+      <h2>Settings</h2>
+      <ul class="nav nav-pills">
+        <li <% if active == 'details' %> class="active"<% end %>><%= link_to "Account", user_details_path(@current_user) %></li>
+        <% if current_user.has_any_role? :admin, :account_admin, :mpi_account_admin %>
+          <li <% if active == 'company' %> class="active"<% end %>><%= link_to "Company Settings", company_path %></li>
+          <li <% if active == 'new' %> class="active"<% end %>><%= link_to 'Request a New User', new_user_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>

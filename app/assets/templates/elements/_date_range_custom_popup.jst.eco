@@ -1,0 +1,44 @@
+<div class="datepicker-popup">
+  <div id="<%= @datepickerId %>"></div>
+  <form class="row">
+    <span class="datetime-group" data-extreme="from">
+      <% if @range: %>
+        From
+      <% end %>
+      <div class="date-entry date-entry-from">
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          <input type="text" id="from" name="from" class="form-control input-sm" />
+        </div>
+      </div>
+      <% if @time: %>
+        <div class="time-entry time-entry-from">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+            <input type="text" id="time_from" name="time_from" class="form-control input-sm" />
+          </div>
+        </div>
+      <% end %>
+    </span>
+    <% if @range: %>
+      <span class="datetime-group" data-extreme="to">
+        To
+        <div class="date-entry date-entry-to">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            <input type="text" id="to" name="to" class="form-control input-sm" />
+          </div>
+        </div>
+        <% if @time: %>
+          <div class="time-entry time-entry-from">
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+              <input type="text" id="time_to" name="time_to" class="form-control input-sm" />
+            </div>
+          </div>
+        <% end %>
+      </span>
+    <% end %>
+    <button id="apply-date-selection" class="btn btn-success btn-sm right">Apply</button>
+  </form>
+</div>

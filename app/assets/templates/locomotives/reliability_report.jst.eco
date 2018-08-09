@@ -1,0 +1,369 @@
+<section class="content row">
+  <div class="row" style="border-bottom: 1px solid rgb(202, 202, 202);">
+		<div class="col-sm-6 col-md-6 reliability-header">
+		  <img src="/assets/reliability-icon.svg"><span class="download-icon">Reliability Report<button class="btn button-csv" id="export-csv">Export CSV <span class="glyphicon glyphicon-download-alt"></span></button></span>
+		</div>
+		<div class="col-sm-6 col-md-6 reliability-right">
+		  <p style="padding-top: 8px; float:right;"><span class="glyphicon glyphicon-envelope"></span> Recurring Report scheduled for <span class="italic">Daily</span> distribution</p>
+		</div>
+  </div>
+  <div class="row" style="padding-top: 33px; border-bottom: 1px solid black;">
+  	<div class="col-sm-6 col-md-6" style="padding-left: 0px; padding-top: 30px;">
+			<select id="loco-type-select" class="selectpicker show-tick" title="Warning Faults" style="color:burlywood">
+        <option></option>
+      </select>
+      <span style="padding-left: 28px; font-weight: bold;">Locomotive Number</span>
+		</div>
+		<div class="col-sm-6 col-md-6">
+		  <div class="seven columns omega" style="width: 100%;">
+	      <div class="date-selection-superwrap">
+	        <span id="date-range-selector"></span>
+	        <div class="date-range-wrap row" style="padding-right: 16px;">
+	          <div class="date-range-display" style="color: rgb(66, 136, 175);">
+	            <span class="chosen-from-date"></span> -
+	            <span class="chosen-to-date"></span>
+	          </div>
+	        </div>
+	      </div>
+    	</div>
+		</div>
+  </div>
+  <div class="dataTables_wrapper no-footer" style="width:800px; margin:0 auto;">
+	  <table id="sample" class="stripe row-border order-column" cellspacing="0" width="100%">
+			<thead style="border-bottom:1px solid rgb(202,202,202);">
+				<tr style="border-bottom:1px solid rgb(202,202,202);">
+					<th style="color: rgb(66, 136, 175);">Fault Title</th>
+					<th>3301</th>
+					<th>3302</th>
+					<th>3303</th>
+					<th>3304</th>
+					<th>3305</th>
+					<th>3306</th>
+					<th>3307</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Fault Totals</td>
+					<td>308</td>
+					<td>141</td>
+					<td>232</td>
+					<td>231</td>
+					<td>213</td>
+					<td>266</td>
+					<td>477</td>
+					<td>3090</td>
+				</tr>
+				<tr>
+					<td>202-PCS(Idle to reset)</td>
+					<td>112</td>
+					<td>139</td>
+					<td>179</td>
+					<td>162</td>
+					<td>158</td>
+					<td>342</td>
+					<td>220</td>
+					<td>2221</td>
+				</tr>
+				<tr>
+					<td>197-GEN Field Switch Down</td>
+					<td>16</td>
+					<td>63</td>
+					<td>15</td>
+					<td></td>
+					<td></td>
+					<td>32</td>
+					<td>1</td>
+					<td>325</td>
+				</tr>
+				<tr>
+					<td>299-Over Speed Cut Power</td>
+					<td></td>
+					<td>r</td>
+					<td>4</td>
+					<td>2</td>
+					<td>2</td>
+					<td>22</td>
+					<td>5</td>
+					<td>65</td>
+				</tr>
+				<tr>
+					<td>221-ECM O Can Comm Fault</td>
+					<td>4</td>
+					<td>7</td>
+					<td></td>
+					<td>5</td>
+					<td>6</td>
+					<td>3</td>
+					<td>3</td>
+					<td>54</td>
+				</tr>
+				<tr>
+					<td>284-Start Engage Fail</td>
+					<td></td>
+					<td>10</td>
+					<td></td>
+					<td>2</td>
+					<td>5</td>
+					<td></td>
+					<td>1</td>
+					<td>24</td>
+				</tr>
+				<tr>
+					<td>210-Wheel Slip</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>193-MU Stop</td>
+					<td>5</td>
+					<td></td>
+					<td>4</td>
+					<td>7</td>
+					<td>169</td>
+					<td>1</td>
+					<td>5</td>
+					<td>34</td>
+				</tr>
+				<tr>
+					<td>196-Engine Run Switch Down</td>
+					<td></td>
+					<td>5</td>
+					<td>8</td>
+					<td>3</td>
+					<td>7</td>
+					<td></td>
+					<td>1</td>
+					<td>67</td>
+				</tr>
+				<tr>
+					<td>543-ECM 112 Timing Fault</td>
+					<td>4</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>49-Open TM 1 Circuit</td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>206-Motor Stall</td>
+					<td></td>
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td>6</td>
+					<td></td>
+					<td></td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>224-EAB Missing Messages</td>
+					<td>1</td>
+					<td>1</td>
+					<td></td>
+					<td>2</td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td>8</td>
+				</tr>
+				<tr>
+					<td>122-MU Lin Failed 1ST-DP AV</td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>279-DB Failed-Run DB Test</td>
+					<td>1</td>
+					<td></td>
+					<td>8</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>9</td>
+				</tr>
+				<tr>
+					<td>301-DB Field Check Failed</td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>629-ECM 729 Blowby Pres LO FlT</td>
+					<td></td>
+					<td>2</td>
+					<td>2</td>
+					<td></td>
+					<td>24</td>
+					<td>118</td>
+					<td></td>
+					<td>157</td>
+				</tr>
+				<tr>
+					<td>146-Transducer Failed BATCT</td>
+					<td></td>
+					<td>18</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td>19</td>
+				</tr>
+				<tr>
+					<td>312-Transducer Imbalance DVM1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>312-Transducer Imbalance DVM1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>185-No DB Grid 3 Open</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>130-MU Line Failed 7T-DP CV</td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>314-Transducer Imbalance DVM3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>3</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>576-ECM 422 Cool Level Fault</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+				</tr>
+				<tr>
+					<td>411-ECM 626 EXH Temp DEV Low</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>74</td>
+					<td></td>
+					<td></td>
+					<td>74</td>
+				</tr>
+				<tr>
+					<td>356-ECM 232 Cool Pres LO FLT</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>350-ECM 222 Bar Pres LO FLT</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>50-Open TM 2 Circuit</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td>51-Open TM 2 Circuit</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>1</td>
+				</tr>
+			</tbody>
+	  </table>
+  </div>
+</section>

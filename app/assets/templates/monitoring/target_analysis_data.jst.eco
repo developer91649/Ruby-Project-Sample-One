@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th class="parameterName">Parameter Name</th>
+      <th class="value">Value</th>
+      <th class="units">Units</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for param in @collection: %>
+      <tr>
+        <td class="parameterName"><%= param.parameterName %></td>
+        <td class="value"><%= param.value %></td>
+        <td class="units"><%= param.units %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

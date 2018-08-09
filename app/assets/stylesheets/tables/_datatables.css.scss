@@ -1,0 +1,90 @@
+/* Show entries from jquery datatables plugin */
+.dataTables_length, .dataTables_info, .dataTables_filter, .filters ul, .dataTables_paginate span {
+  color:#696969;
+  font-size: 14px;
+  margin-bottom: 10px;
+  label {
+    font-weight: normal;
+    // Search text is wrapped in span
+    span {
+      float: left;
+      display: inline;
+      margin-right: 5px;
+    }
+  }
+}
+
+.dataTables_info {
+  text-transform: none;
+  float: left;
+  display: inline;
+  margin-bottom: 40px;
+  @include mobile {
+    margin-bottom: 5px;
+    display: block;
+    float: none;
+  }
+}
+
+
+.dataTables_paginate {
+  float: right;
+  display: inline;
+  @include mobile {
+    display: block;
+    float: none;
+    margin-bottom: 10px;
+  }
+  span {
+    @include mobile {
+      display: block;
+    }
+  }
+  .paginate_button,
+  .paginate_active {
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #f6f5f5;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 1.8em;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow:  0 -1px 0 #ffffff, 1px 0 0 #dddddd, 0 1px 0 #c7c7c7, -1px 0 0 #dddddd;
+    -moz-box-shadow: 0 -1px 0 #ffffff, 1px 0 0 #dddddd, 0 1px 0 #c7c7c7, -1px 0 0 #dddddd;
+    -webkit-box-shadow: 0 -1px 0 #ffffff, 1px 0 0 #dddddd, 0 1px 0 #c7c7c7, -1px 0 0 #dddddd;
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  .paginate_active {
+    cursor: text;
+  }
+
+  .paginate_active,
+  .paginate_button:hover {
+    background-color: #aaaaaa;
+    color: #ededed;
+    box-shadow:  0 -1px 0 #ffffff inset, 1px 0 0 #dddddd, 0 1px 0 #8a8a8a inset, -1px 0 0 #dddddd;
+    -moz-box-shadow: 0 -1px 0 #ffffff inset, 1px 0 0 #dddddd, 0 1px 0 #8a8a8a inset, -1px 0 0 #dddddd;
+    -webkit-box-shadow: 0 -1px 0 #ffffff inset, 1px 0 0 #dddddd, 0 1px 0 #8a8a8a inset, -1px 0 0 #dddddd;
+  }
+  .first.paginate_button,
+  .previous.paginate_button {
+    @include mobile {
+      display: inline-block;
+      margin: 10px 10px 10px 0;
+    }
+  }
+}
+
+
+.dataTables_filter {
+  display: none;
+}
+
+.dataTables_filter input {
+  display: inline;
+}

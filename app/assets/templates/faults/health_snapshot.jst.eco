@@ -1,0 +1,19 @@
+<span class="close-btn"></span>
+<div class="dialog-header">
+  <h2>Alarm Health Snapshot: <%= @fault.get("title") %></h2>
+</div>
+<div class="dialog-section point-summary">
+  <dl>
+    <dt class="loco">Locomotive</dt>
+    <dd class="loco"><%= @loco.get("title") %></dd>
+
+    <dt class="time">Time</dt>
+    <dd class="time"><%= moment.utc(@queryTime).format("YYYY-MM-DD HH:mm:ss") %> UTC</dd>
+  </dl>
+</div>
+<div class="dialog-data">
+  <div class="loader">
+    <img class="spinner" src="/assets/ajax-loader-sm-transparent.gif" />
+    Fetching data ...
+  </div>
+</div>

@@ -1,0 +1,148 @@
+<section class="content row">
+  <div class="sixteen columns alpha">
+    <div class="row excess-row">
+      <div class="col-sm-6 col-md-6 excess-header">
+        <image src="/assets/excess-idle-icon.svg"><span class="download-icon">Excess Idle Report</span>
+      </div>
+      <div class="col-sm-6 col-md-6 daily-report">
+        <p style="float: right;"><span class="glyphicon glyphicon-envelope"></span> Recurring Report scheduled for <span class="italic">Daily</span> distribution</p>
+      </div>
+    </div>
+    <div class="parent-row"">
+      <div class="col-sm-10 col-md-10">
+        <div class="total-excess" style="float: left; width: 16%;">
+          <p>Total Excess Idling(>2hrs Idle)</p>
+          <strong>12<span>Hrs</span></strong>
+        </div>
+        <div class="units-excess" style="float: left; width: 14%;">
+          <p>Units in Excess Idle(>2hrs Idle)</p>
+          <strong>3</strong>
+        </div>
+        <div class="average-excess" style="float: left; width: 15%;">
+          <p>Average Excess Idle(Per Unit)</p>
+          <strong>6<span>Hrs</span></strong>
+        </div>
+        <div class="projected-excess" style="float: left; width: 23%;">
+          <p>Projected Annual Cost of Excess Idle</p>
+          <strong>$58,646.00</strong>
+        </div>
+        <div class="cost-excess" style="float: left; width: 32%;">
+          <p>Cost of Fuel</p>
+          <strong>$4.83<span>I-Gal</span></strong>
+        </div>
+      </div>
+      <div class="col-sm-2 col-md-2">
+        <div class="seven columns omega" style="width: 100%;">
+          <div class="date-selection-superwrap">
+            <span id="date-range-selector"></span>
+            <div class="date-range-wrap row">
+              <div class="date-range-display">
+                <span class="chosen-from-date"></span> -
+                <span class="chosen-to-date"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <table id="example" class="stripe row-border order-column" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Unit</th>
+              <th>Date</th>
+              <th>E1>2hr Idle</th>
+              <th>E2>2hr Idle</th>
+              <th>>2hr Idle</th>
+              <th><2hr Idle</th>
+              <th>HEP idling</th>
+              <th>Moving Idle</th>
+              <th>Dead</th>
+              <th>No Comm</th>
+              <th>Service(TH1-8)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>LM3301</td>
+              <td>0000-00-00</td>
+              <td>1.2</td>
+              <td>0.5</td>
+              <td>0</td>
+              <td>4.0</td>
+              <td>9.2</td>
+              <td>0.2</td>
+              <td>3.0</td>
+              <td>0</td>
+              <td>7.6</td>
+            </tr>
+            <tr>
+              <td>LM3302</td>
+              <td>0000-00-00</td>
+              <td>0.1</td>
+              <td>3.0</td>
+              <td>3.0</td>
+              <td>2.0</td>
+              <td>0</td>
+              <td>2.0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>17.0</td>
+            </tr>
+            <tr>
+              <td>LM3303</td>
+              <td>0000-00-00</td>
+              <td>5.0</td>
+              <td>4.0</td>
+              <td>9.0</td>
+              <td>2.0</td>
+              <td>4.0</td>
+              <td>0.5</td>
+              <td>8.0</td>
+              <td>0</td>
+              <td>0.5</td>
+            </tr>
+            <tr>
+              <td>LM3304</td>
+              <td>0000-00-00</td>
+              <td>1.2</td>
+              <td>0.5</td>
+              <td>1.7</td>
+              <td>4.0</td>
+              <td>0</td>
+              <td>0.2</td>
+              <td>5.0</td>
+              <td>6.0</td>
+              <td>7.1</td>
+            </tr>
+            <tr>
+              <td>LM3305</td>
+              <td>0000-00-00</td>
+              <td>4.0</td>
+              <td>0</td>
+              <td>4.0</td>
+              <td>2.0</td>
+              <td>0</td>
+              <td>8.0</td>
+              <td>8.0</td>
+              <td>2.0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>LM3306</td>
+              <td>0000-00-00</td>
+              <td>4.0</td>
+              <td>0</td>
+              <td>4.0</td>
+              <td>2.0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>18.0</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</section>

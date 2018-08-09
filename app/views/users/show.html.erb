@@ -1,0 +1,79 @@
+<section class="row">
+  <div class="sixteen columns settings-wrap alpha">
+    <div class="app-placeholder">
+      <%= render :partial => 'users/account_nav', :locals => { :active => 'company' } %>
+      <%= simple_form_for @user,
+        :wrapper => :bootstrap3_horizontal, 
+        :defaults => {
+          right_column_html: { class: "col-md-9" },
+          label_html:        { class: "col-md-3" }
+        },
+        html:              { class: "form-horizontal account-form row", role: "form" } do |f| %>
+      <div class="ten columns alpha">
+        <div class="account-left">
+          <div class="col-sm-12 col-md-12 detail-style" style="padding-left: 0px;">
+            <h1 class="small" style="display: inline-block;">Account Details</h1>
+            <span class="glyphicon glyphicon-cog"></span><%= link_to 'Edit', edit_user_path(@user), :class => "btn" %>
+          </div>
+          <dl class="dl-horizontal">
+            <dt>First Name</dt>
+            <dd><%= @user.first_name %></dd>
+            <dt>Last Name</dt>
+            <dd><%= @user.last_name %></dd>
+            <dt>Email</dt>
+            <dd><%= @user.email %></dd>
+            <dt>Country</dt>
+            <dd><%= @user.country %></dd>
+            <dt>Country</dt>
+            <dd><%= @user.country %></dd>
+            <dt>State</dt>
+            <dd><%= @user.state %></dd>
+            <dt>City</dt>
+            <dd><%= @user.city %></dd>
+            <dt>Job Title</dt>
+            <dd><%= @user.job_title %></dd>
+          </dl>
+          <dl class="dl-horizontal dl-view-style">
+            <dt>ID</dt>
+            <dd><%= @user.id %></dd>
+            <dt>Sign in Count</dt>
+            <dd><%= @user.sign_in_count %></dd>
+            <dt>Current sign in at</dt>
+            <dd><%= @user.current_sign_in_at %></dd>
+            <dt>Last sign in at</dt>
+            <dd><%= @user.last_sign_in_at %></dd>
+            <dt>Confirmed at</dt>
+            <dd><%= @user.confirmed_at %></dd>
+            <dt>Confirmation sent at</dt>
+            <dd><%= @user.confirmation_sent_at %></dd>
+            <dt>Unconfirmed email</dt>
+            <dd><%= @user.unconfirmed_email %></dd>
+            <dt>Created at</dt>
+            <dd><%= @user.created_at %></dd>
+            <dt>Updated at</dt>
+            <dd><%= @user.updated_at %></dd>
+            <dt>Approved by Admin</dt>
+            <dd><%= @user.approved_by_admin %></dd>
+            <dt>Approved by Account admin</dt>
+            <dd><%= @user.approved_by_account_admin %></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="six columns omega">
+        <div class="account-right">
+          <h2 class="small">Site Preference</h2>
+          <%= f.input :pref_email_notifications, :label => "Receive email notifications for faults" %>
+          <%= f.input :pref_header_image, :class => "checkbox", :label => "Company Masthead" %>
+          <%= f.input :pref_fault_severity_filter, :label => "Default Fault Severity Filter on Fault Summary", :collection => ["Show All", "Critical & Warning", "Critical", ">60sec Alerts"] %>
+          <%= f.input :pref_default_health_param, :label => "Default Health Parameter", :collection => @health_params %>
+          <%= f.input :pref_default_status_param, :label => "Default Status Parameter", :collection => @status_params %>
+          <%= f.input :pref_time_display, :label => "Choose how time is displayed sitewide", :collection => User.time_options %>
+          <%= f.input :pref_timezone, :label => "Time Zone Settings", :collection => ActiveSupport::TimeZone.all %>
+          <%= f.input :pref_daylight_savings, :label => "Observe Daylight Savings" %>
+
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>

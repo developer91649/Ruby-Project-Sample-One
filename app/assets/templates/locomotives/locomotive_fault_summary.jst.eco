@@ -1,0 +1,34 @@
+<div class="quickview-placeholder"></div>
+<section class="content row">
+  <div class="sixteen columns alpha">
+    <div class="clearfix summary-filter-wrap">
+      <p class="loading-inline">Loading Filters ...</p>
+    </div>
+    <div class="table-wrap">
+      <div class="table-loading table-loading-summary"><p>Loading Summary ...</p></div>
+      <table class="alarms standard fault-summary-table" style="margin-bottom: 0px;">
+        <thead>
+          <tr class="header">
+            <th class="system-td sorting"><span>System</span></th>
+            <th class="fault-severity-td sorting"><span>Fault Severity</span></th>
+            <th class="fault-map-wrap-td">Location</th>
+            <th class="display-code-td sorting"><span>Fault Code</span></th>
+            <th class="sorting"><span>Fault Name</span></th>
+            <th class="loco-last-updated header-time sorting_desc"><span>Fault Time (<%= @user.get("pref_time_display") %>)</span></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div><!-- /table-wrap -->
+    <div class="table-wrap">
+      <div class="table-loading table-loading-archive"><p>Loading Archive ...</p></div>
+      <table class="alarms standard fault-archive-table">
+        <tbody>
+        </tbody>
+      </table>
+    </div><!-- /table-wrap -->
+
+  </div><!-- /columns -->
+</section><!-- /content -->

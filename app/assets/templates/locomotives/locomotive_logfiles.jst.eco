@@ -1,0 +1,23 @@
+<div class="quickview-placeholder"></div>
+
+<section class="content row clearfix">
+  <div class="sixteen columns alpha">
+    <h1>
+      <%= @system.get("name") %>
+      Log
+    </h1>
+    <ul class="nav nav-pills on-demand-list">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          Download On-Demands
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu" id="send-flag-list">
+        </ul>
+      </li>
+    </ul>
+
+    <div id="logfile-list-wrap"></div>
+  </div><!-- /columns -->
+</section>
+z

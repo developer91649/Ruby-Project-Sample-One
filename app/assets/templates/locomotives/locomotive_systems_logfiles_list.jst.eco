@@ -1,0 +1,15 @@
+<ul class="nav nav-pills pull-right snapshot-list" id="locomotive-detail-nav" style="width:100%; border-bottom:1px solid #d3d3d3; margin:0 auto;">
+<% for system in @system.models: %>
+  <% if system.get("send_file_flags").length: %>
+  <li role="presentation" data-systemid="<%= system.get("id") %>" data-systemname="<%= system.get("name") %>">
+    <a data-link="maintenance" href="/locomotives/<%= @locomotive.get('id') %>/maintenance/snapshots/<%= system.get("id") %>">
+      <%= system.get("name") %>
+      <% if system.get("name") is "CDS" or system.get("name") is "QES": %>
+      <% end %>
+      <span>Log</span>
+    </a>
+  </li>
+  <% end %>
+<% end %>
+</ul>
+

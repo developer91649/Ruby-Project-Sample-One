@@ -1,0 +1,5 @@
+<div class="quickview-placeholder"></div>
+<section class="content row clearfix">
+  <h2 class="snapshot-list-header"></h2>
+  <p class="loading-inline snapshot-loading">Loading ... </p>
+</section>

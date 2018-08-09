@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th class="parameterName">Parameter Name
+      </th><th class="value history">T-05s
+      </th><th class="value history">T-04s
+      </th><th class="value history">T-03s
+      </th><th class="value history">T-02s
+      </th><th class="value history">T-01s
+      </th><th class="value current">Current
+      </th><th class="units">Units</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for param in @parameters: %>
+      <tr>
+        <td class="parameterName"><%= param.parameterName %>
+        </td><td class="value history"><%= param["-5"] %>
+        </td><td class="value history"><%= param["-4"] %>
+        </td><td class="value history"><%= param["-3"] %>
+        </td><td class="value history"><%= param["-2"] %>
+        </td><td class="value history"><%= param["-1"] %>
+        </td><td class="value current"><%= param["currentValue"] %>
+        </td><td class="units"><%= param.units %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

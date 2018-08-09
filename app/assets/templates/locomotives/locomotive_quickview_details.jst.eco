@@ -1,0 +1,64 @@
+<ul>
+  <li class="loco-details-status">
+    <img src="" alt="">
+    <span class="loco-status"></span>,
+    <span style="font-weight: normal;">  <span class="total-faults"></span> Active Faults</span>
+  </li>
+
+  <li class="title">Locomotive Type</li>
+  <li><strong><%= @loco.get('locomotive_type').name %></strong></li>
+
+  <li class="title">GPS Location</li>
+  <li class="loco-details-gps">
+    <span><%= @loco.get('gps') %></span>
+
+    <% if !@loco.isGpsOnline(): %>
+    <i class="last-known-location">Last Known Location</i>
+    <% end %>
+  </li>
+
+  <li class="title">Location Name</li>
+  <li class="loco-details-waypoint"><span><%= @loco.get('waypoint') %></span></li>
+  <li class="title">Last Known Time</li>
+  <li class="times">
+    <ul class="times-list">
+      <li class="utc-time clearfix">
+        <strong></strong>
+        <span>UTC<em></em></span>
+      </li>
+      <li class="preference-time clearfix">
+        <strong></strong>
+        <span>Pref Time<em></em></span>
+      </li>
+      <li class="locomotive-time clearfix">
+        <strong></strong>
+        <span>Loco Time<em></em></span>
+      </li>
+    </ul>
+  </li>
+
+  <% if @user.hasFeatureEnabled("locomotive_out_of_service"): %>
+  <li style="margin-top: 14px;">
+    <a class="btn btn-default btn-quickview" id="place-out-of-service" href="#">
+      <% if @loco.isOutOfService(): %>
+        <i class="fa fa-link"></i>Place Locomotive into Service
+      <% else: %>
+        <i class="fa fa-unlink"></i>Place Locomotive Out of Service
+      <% end %>
+    </a>
+  </li>
+  <% end %>
+
+  <li style="margin-top: 10px;">
+    <a class="btn btn-default btn-quickview" id="snapshot-download-btn" data-link="maintenance" href="/locomotives/<%= @loco.get('id') %>/maintenance">
+      Snapshot Downloads
+    </a>
+  </li>
+
+  <li style="margin-top: 10px;">
+    <a class="btn btn-default btn-quickview" id="software-version-btn" href="#">
+      Details & Software Versions
+    </a>
+  </li>
+</ul>
+

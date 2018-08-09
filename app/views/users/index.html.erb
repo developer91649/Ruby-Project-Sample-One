@@ -1,0 +1,38 @@
+<section class="row">
+  <div class="sixteen columns settings-wrap alpha">
+    <div class="app-placeholder">
+      <%= render :partial => 'users/account_nav', :locals => { :active => 'company' } %>
+
+      <h1 class="small">Company Members</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Confirmation Sent</th>
+            <th>Approval Status</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr class="table-content">
+              <td><%= user.first_name %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.confirmation_sent_at %></td>
+              <td><%= user.approval_status %></td>
+              <td class="user-icon"><span class="glyphicon glyphicon-user"></span><%= link_to 'View', user %></td>
+              <td class="set-icon"><span class="glyphicon glyphicon-cog"></span><%= link_to 'Edit', edit_user_path(user) %></td>
+              <td class="remove-icon"><span class="glyphicon glyphicon-remove"></span><%= link_to 'Remove', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+

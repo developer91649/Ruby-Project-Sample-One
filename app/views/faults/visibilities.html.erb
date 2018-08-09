@@ -1,0 +1,29 @@
+<section class="row">
+  <div class="sixteen columns settings-wrap">
+    <div class="app-placeholder">
+      <%= render :partial => 'users/account_nav', :locals => { :active => 'company' } %>
+
+      <h1 class="underlined_small">Fault Visibility</h1>
+      <p>Select faults that your company wishes not see on the fault archive.</p>
+      <ul class="fault-notification-list column">
+        <% @faults.each do |f| %>
+          <li id="fault-<%= f.id %>" class="clearfix">
+            <strong><%= f.title %> </strong>
+            <em>
+              <%= link_to(
+                f.hidden_button_text,
+                fault_visibility_path(f, format: :js),
+                method: :put,
+                remote: true,
+                :class => "hidden-link",
+                :id => f.id,
+                "data-fault-id" => f.id
+              ) %>
+            </em>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
+

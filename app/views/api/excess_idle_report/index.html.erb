@@ -1,0 +1,38 @@
+<div class="table-wrap">
+  <table class="locomotives standard">
+    <thead>
+      <tr class="header">
+        <th class="loco-name sorting sorting_asc"><span>Locomotive</span></th>
+        <th class="loco-status sorting"><span>Status</span></th>
+        <th class="loco-type sorting"><span>Type</span></th>
+        <th class="loco-waypoint sorting"><span>Location</span></th>
+        <th class="loco-last-updated header-time sorting"><span>Last Fault ON Time</span></th>
+        <th><span>Active Faults</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @health_data.each do |health| %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+      <% @status_data.each do |status| %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+
+      <!-- <tr class="locomotive_info level_zero" id="loco_"> -->
+    </tbody>
+  </table>
+</div><!-- /table-wrap -->

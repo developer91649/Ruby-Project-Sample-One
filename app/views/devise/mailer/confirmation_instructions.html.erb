@@ -1,0 +1,8 @@
+<p>Welcome <%= @resource.email %>!</p>
+
+<p>A user account has been created for you in the CDS to access <a href="<%= @resource.account.subdomain %>.cdswabtec.com"><%= @resource.account.subdomain %>.cdswabtec.com</a>.</p>
+
+<p>You can claim your account by setting a password via the link below:</p>
+
+<p><%= link_to 'Claim My Account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+

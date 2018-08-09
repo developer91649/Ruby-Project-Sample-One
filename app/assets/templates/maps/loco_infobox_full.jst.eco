@@ -1,0 +1,31 @@
+<% if _.size(@locomotives) > @maxLocos: %>
+
+<a href="#" class="loco-info-scroll up"><span class="glyphicon glyphicon-chevron-up"></span></a>
+<div class="loco-info-wrap">
+
+<% end %>
+
+<% for locomotive in @locomotives: %>
+  <div class='loco-info-pack'>
+    <div class="clearfix">
+      <div class="loco-info-header">
+        <div class='loco-info-num'><%= locomotive.get("title") %></div>
+        <div class='loco-info-status status-<%= locomotive.get("status_locomotive") %>'>
+          <img src='/assets/<%= locomotive.get("icon_image") %>'>&nbsp;&nbsp;<%= locomotive.get("loco_status_text") %>
+        </div>
+      </div>
+      <div class='loco-info-time'><%= @time(locomotive: locomotive, user: @user) %></div>
+    </div>
+    <div class="link-wrap clearfix">
+      <a class='loco-info-details' href='/locomotives/<%= locomotive.get("id") %>'>Details</a>
+      <a class='loco-fault-summary' href='/locomotives/<%= locomotive.get("id") %>/fault-summary'>Fault Summary</a>
+    </div>
+  </div>
+<% end %>
+
+<% if _.size(@locomotives) > @maxLocos: %>
+
+</div>
+<a href="#" class="loco-info-scroll down"><span class="glyphicon glyphicon-chevron-down"></span></a>
+
+<% end %>

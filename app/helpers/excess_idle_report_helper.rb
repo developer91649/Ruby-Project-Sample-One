@@ -1,0 +1,2 @@
+module ExcessIdleReportHelper
+end

@@ -1,0 +1,188 @@
+/* tables
+--------------------------------------- */
+
+/* Default styles for locomoitve (fleet summary) and fault summary */
+.table-wrap {
+  table.standard {
+    clear:both;
+    width: 100%;
+    margin: 0 0 20px;
+    border-collapse: collapse;
+    border-spacing: 0 5px;
+    thead {
+      // border:1px solid #d6d6d7;
+      border-bottom: none;
+      min-height: 20px;
+      tr {
+        // background-color: #d3d3d3;
+        border-bottom-width: 0px;
+        // background-color: #d3d3d3;
+      }
+      th {
+        // border-bottom: 1px solid rgb(202,202,202)!important;
+        // border-bottom-width: 0px;
+        text-transform: uppercase;
+        font-size: 12px;
+        padding:3px 0;
+        vertical-align: middle;
+        text-align: center;
+        min-height: 30px;
+        color: #696969;
+        font-weight: bold;
+        @include mobile {
+          font-size: 9px;
+        }
+      }
+      th.sorting span {
+        cursor: pointer;
+        background: transparent url(/assets/sort-icons.gif) no-repeat right 5px;
+        padding: 5px 17px 5px 5px;
+      }
+      th.sorting_asc,
+      th.sorting_desc {
+        // background-color: #c4c4c4;
+        color: rgb(66, 136, 175);
+        span {
+          background-color: none;
+          padding: 5px 17px 0 0;
+        }
+      }
+      th.sorting_asc span {
+        background: transparent url(/assets/sort-asc.gif) no-repeat right 10px;
+      }
+      th.sorting_desc span {
+        background: transparent url(/assets/sort-desc.gif) no-repeat right 10px;
+      }
+    }
+    tr {
+      // background-color: #ededed;
+      a {
+        color: #7e7e7e;
+        text-shadow:  0 1px 0 #f9f9f9;
+        // border-top: 1px solid #ffffff;
+        // border-bottom: 1px solid #c7c7c7;
+        // background: #f3f3f3 url(/assets/lt_grey_btn_sl.gif) repeat-x 0 bottom;
+        text-align:center;
+        vertical-align:middle;
+        line-height: 23px;
+        display: block;
+        height: 23px;
+        text-transform: uppercase;
+      }
+      .round4 {
+        @include standard-button;
+        padding: 0;
+        @include mobile {
+          font-size: 10px;
+        }
+      }
+
+      .round4:hover { 
+        background-position: 0 -27px;
+        background: none;
+       }
+    }
+    td {
+      color: #7e7e7e;
+      font-size: 12px;
+      vertical-align: middle;
+      text-shadow: 0 1px 0 #ffffff;
+      // border-right: 1px solid #d3d3d3;
+      // border-left: 1px solid #d3d3d3;
+      // padding: 5px 10px;
+      border-bottom: 1px solid #d3d3d3;
+      font-weight: bold;
+      @include mobile {
+        padding: 0 5px;
+      }
+    }
+    td.fault-summary-link {
+      border-right: none;
+    }
+    td.loconumber {
+      width: 105px;
+      cursor: pointer;
+      a {
+        width: 105px;
+      }
+    }
+    td.locostatus-td {
+      width: 145px;
+      border-left: none;
+      text-transform: uppercase;
+      span {
+        background: transparent url(/assets/green-icon.gif) no-repeat 2px 4px;
+        padding: 2px 0px 0px 20px;
+        height: 14px;
+        display: block;
+      }
+    }
+    td.gps a {
+      width: 55px;
+    }
+    td.fault-link {
+      a {
+        width: 125px;
+        text-transform: uppercase;
+      }
+    }
+    td.fault-archive-link a {
+      width: 75px;
+    }
+    td.fault-summary-link a {
+      width: 200px;
+      height: 23px;
+      text-transform: none;
+    }
+    .time-td {
+      width: 180px;
+    }
+    .time-list-wrap {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      .times-list {
+        width: 290px;
+        height: 100px;
+        display: block;
+        padding-bottom: 5px;
+        margin: 0;
+        .close-times-list {
+          position: absolute;
+          top: -15px;
+          right: -15px;
+          width: 30px;
+          height: 30px;
+          background: transparent url(/assets/close-light.png) no-repeat 0 0;
+          border: none;
+          cursor: pointer;
+        }
+        li {
+          cursor: pointer;
+          text-shadow: none;
+          padding-left: 5px;
+          padding-top: 5px;
+          strong {
+            text-shadow: none;
+            font-weight: normal;
+            width: 54%;
+          }
+          span {
+            width: 31%;
+          }
+        }
+        .locomotive-time {
+          border: none;
+          padding-bottom: 5px;
+        }
+        .chosen-pref span {
+          background: transparent url(/assets/checkmark-circle.png) no-repeat 0 2px;
+        }
+        li:hover {
+          background-color: #898a8c;
+        }
+      }
+    }
+  }
+}

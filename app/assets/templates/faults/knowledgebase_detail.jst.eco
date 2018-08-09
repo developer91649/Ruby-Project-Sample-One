@@ -1,0 +1,48 @@
+<section class="content row">
+  <div class="sixteen columns alpha">
+    <div class="ten columns alpha">
+      <div class="fault-diagnostics-wrap-top <%= @fault.fault_status_class %>_fault">
+        <div class="fault-meta">
+          <div class="fault-header clearfix">
+            <h2>
+              <span class="fault_severity"><%= @fault.fault_status_text %></span>
+            </h2>
+            <h1><%= @fault.title %></h1>
+          </div>
+          <ul class="clearfix fault-info">
+            <li><span>System:</span> <%= @fault.system_name %></li>
+            <li><span>Code:</span> <%= @fault.code_display %></li>
+            <% if @fault.spn?: %>
+            <li><span>SPN-FMI:</span> <%= @fault.spn %>
+              <% if @fault.fmi?: %>
+              -<%= @fault.fmi %>
+              <% end %>
+            </li>
+            <% end %>
+            <% if @fault.qes_variable?: %>
+            <li><span>QES #</span><%= @fault.qes_variable %></li>
+            <% end %>
+            <% if @fault.cummins_variable?: %>
+            <li><span>Cummins #</span><%= @fault.cummins_variable %></li>
+            <% end %>
+          </ul>
+        </div><!-- level_XXX_fault -->
+      </div><!-- /fault-diagnostics-wrap-top -->
+      <div class="fault-diagnostics-wrap-bottom">
+        <h3>Fault Description</h3>
+        <h4>Explanation</h4>
+        <p><%- @fault.explanation %></p>
+        <h4>Locomotive Effect</h4>
+        <p><%- @fault.locomotive_effect %></p>
+        <h3>Action/Resolution</h3>
+        <h4>Operator Action</h4>
+        <p><%- @fault.operator_action %></p>
+        <h4>Maintainer Action</h4>
+        <p><%- @fault.maintainer_action %></p>
+      </div><!-- fault-diagnostics-wrap-bottom -->
+    </div><!-- /columns -->
+    <div class="six columns omega">
+      &nbsp;
+    </div>
+  </div>
+</section><!-- /content -->

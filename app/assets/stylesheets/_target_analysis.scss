@@ -1,0 +1,289 @@
+// ----------------------------- TARGET ANLYSIS ----------------------------- //
+
+i.ta-logo {
+  background: image-url('ta-logo.png') no-repeat center center;
+  display: inline-block;
+  position: relative;
+  bottom: -3px;
+  height: 16px;
+  width: 16px;
+}
+
+.modes-wrap {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;
+  position: absolute;
+}
+
+.highcharts-marker {
+  $markerSize: 18px;
+
+  border-radius: ($markerSize * 0.5) + 1;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;
+  text-align: center;
+  line-height: $markerSize;
+  font-size: $markerSize * 0.55;
+  display: block;
+  position: absolute;
+  background: black;
+  margin: (0 - ($markerSize * 0.5)) 0 0 (0 - ($markerSize * 0.5));
+  height: $markerSize;
+  width: $markerSize;
+
+  &:hover {
+    border: 1px solid white;
+    line-height: $markerSize - 2;
+    cursor: pointer;
+  }
+}
+
+.highcharts-ordered-select {
+  color: white;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.mode-report {
+  background: rgba(255, 255, 255, 0.9);
+  // height: 280px;
+
+  width: 400px;
+  z-index: 100001;
+
+  .ta-logo-wrap {
+    float: left;
+    margin-left: 11px;
+    padding-top: 11px;
+    // border-right: 1px solid #ccc;
+    padding-right: 10px;
+    height: 32px;
+
+    i.ta-logo {
+      bottom: -2px;
+      margin-right: 3px;
+    }
+  }
+
+  .mode-report-header {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-bottom: 1px solid #ccc;
+    cursor: move;
+    margin-bottom: 10px;
+
+    h2 {
+      font-size: 16px;
+      line-height: 22px;
+      margin: 0 0 0 55px;
+    }
+  }
+
+  .mode-report-point-summary {
+    dl {
+      margin-bottom: 0;
+      padding: 0 10px;
+      text-align: right;
+    }
+    dl dt, dl dd {
+      font-size: 13px;
+      font-weight: 400;
+      display: inline-block;
+      margin: 0;
+
+      &.value {
+        font-weight: 600;
+      }
+    }
+
+    dt {
+      &.loco, &.time { display: none; }
+      &:after { content: ":"; }
+    }
+
+    dd {
+      &.time {
+        float: left;
+      }
+
+      &.loco {
+        display: block;
+        font-weight: 600;
+        text-align: left;
+      }
+    }
+  }
+}
+
+// ----------------- CRITICAL ALARM (TOOLTIP NOTIFICATION) ------------------ //
+.highcharts-tooltip, .modes-wrap {
+  .critical-alarm-notification {
+    margin: 7px -9px 0 -7px;
+    padding: 7px 7px 0;
+    border-top: 1px solid $grey-medium;
+    color: $state-danger-text;
+    font-weight: 600;
+    text-align: center;
+
+    small {
+      color: $grey-medium;
+      font-weight: normal;
+      font-style: italic;
+      display: block;
+    }
+  }
+}
+
+// ------------------------------- MODES MENU ------------------------------- //
+.modes-wrap {
+  $tipPadding: 7px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 167px;
+  margin-top: -1px;
+  padding: $tipPadding 0 0;
+
+  .close-btn {
+    @extend .glyphicon;
+    @extend .glyphicon-remove;
+    color: $gray-light;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    cursor: pointer;
+    padding: 2px;
+    border: 1px solid transparent;
+    border-radius: $border-radius-small;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  h2 {
+    font-size: 12px;
+    margin: 0 0 0 5px;
+    line-height: 1.7;
+    padding: 0 0 3px;
+
+    i {
+      margin-right: 3px;
+
+      &.glyphicon-flag {
+        margin-left: 2px;
+        margin-right: 5px;
+        width: 12px;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0 0 0;
+    padding: 0;
+    li {
+      font-size: 12px;
+      line-height: normal;
+      padding: 0 $tipPadding;
+    }
+  }
+  .modes-panel-btm li, .critical-alarm-wrap li {
+    padding: 0;
+  }
+  a {
+    color: black;
+    cursor: pointer;
+    display: block;
+    line-height: 1.2em;
+    padding: 3px $tipPadding 3px 24px;
+
+    &:hover {
+      background-color: #e2e2e2;
+      text-decoration: none;
+    }
+
+    &.disabled {
+      color: $gray-light;
+      cursor: default;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+  .modes-panel-top {
+    padding: 0 0 $tipPadding + 1;
+  }
+  .modes-panel-btm {
+    padding-top: $tipPadding;
+    padding-bottom: $tipPadding;
+    border-top: 1px solid #cccccc;
+    display: none;
+  }
+
+  // -------------------------- CRITICAL ALARMS --------------------------- //
+  .critical-alarm-wrap {
+    border-top: 1px solid $grey-medium;
+    overflow: hidden;
+    margin: -1px 0 0;
+  }
+  .critical-alarm-notification {
+    border-top-width: 0;
+    line-height: normal;
+    margin: 0;
+    padding-bottom: 7px;
+    position: relative;
+    font-size: 12px;
+
+    img.critical-alarm-loading {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+    }
+  }
+
+  .critical-alarm-details {
+    h2 { color: $state-danger-text; }
+
+    background: mix($state-danger-bg, white, 5%);
+    padding: 7px 0;
+
+    a:hover {
+      background: $brand-danger;
+      color: white;
+    }
+  }
+}
+
+// ------------------------------- TA DIALOG -------------------------------- //
+
+.dialog.ta-dialog {
+  &.ta-mode-report {
+    width: 420px;
+  }
+
+  .ta-logo-wrap {
+    float: left;
+    margin-left: 11px;
+    padding-top: 11px;
+    // border-right: 1px solid #ccc;
+    padding-right: 10px;
+    height: 32px;
+
+    i.ta-logo {
+      bottom: -2px;
+      margin-right: 3px;
+    }
+  }
+
+  .dialog-data table {
+    .parameterName { width: 60% }
+    .value         { width: 20% }
+    .units         { width: 20% }
+  }
+}

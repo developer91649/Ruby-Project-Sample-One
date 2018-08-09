@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alarm Notification</title>
+</head>
+<body>
+
+<p>
+Hello <%= @user.first_name_or_email %>, <br />
+This is to notify you that a fault was triggered 
+
+<% if @alarm.on? %>
+  <strong>ON</strong>
+<% else %>
+  <strong>OFF</strong>
+<% end %>
+
+<%= @locomotive.title %>: <strong><%= @fault.title %></strong>.
+</p>
+
+<p>
+Locomotive effect: <br />
+<%= raw @fault.locomotive_effect %>
+</p>
+
+<p>
+Operator action: <br />
+<%= raw @fault.operator_action %>
+</p>
+
+<p>
+Maintainer action: <br />
+<%= raw @fault.maintainer_action %>
+</p>
+
+<p>
+<%= link_to(
+"See knowledge base article for this fault",
+"http://#{@account.subdomain}.#{ActionMailer::Base.default_url_options[:host]}/kb/#{@fault.id}"
+) %>
+</p>
+
+<p>
+<%= link_to(
+"View fault summary",
+"http://#{@account.subdomain}.#{ActionMailer::Base.default_url_options[:host]}/locomotives/#{@locomotive.id}/fault-summary"
+) %>
+</p>
+<body>
+</html>

@@ -1,0 +1,22 @@
+<span class="close-btn"></span>
+<div class="dialog-header">
+  <div class="ta-logo-wrap"><i class="ta-logo" /><span class="point-id"><%= @point.marker.id %></span></div>
+  <h2>Target Analysis: GPS</h2>
+</div>
+<div class="dialog-section point-summary">
+  <dl>
+    <dt class="loco">Locomotive</dt>
+    <dd class="loco"><%= @locoTitle %></dd>
+
+    <dt class="time">Time</dt>
+    <dd class="time"><%= moment.utc(@point.x).format("YYYY-MM-DD HH:mm:ss") %> UTC</dd>
+  </dl>
+</div>
+<div class="dialog-section map-options">
+  <div class="date-range-display">
+    <span class="datetime-from"></span>
+    <span class="datetime-separate">to</span>
+    <span class="datetime-to"></span>
+  </div>
+</div>
+<div class="dialog-section map"></div>

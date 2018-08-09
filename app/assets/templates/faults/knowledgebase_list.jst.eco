@@ -1,0 +1,21 @@
+<section class="content row">
+  <div class="sixteen columns alpha">
+    <table class="standard" id="kb-list">
+      <thead>
+        <tr class="header">
+          <th><span>Title</span></th>
+          <th><span>Code</span></th>
+          <th>System</th>
+        </tr>
+      </thead>
+      <% for fault in @faults: %>
+      <tr data-id="<%= fault.id %>">
+        <td><%= fault.title %></td>
+        <td><%= fault.code_display %></td>
+        <td><%= fault.system_name %></td>
+      </tr>
+      <% end %>
+    </table>
+
+  </div><!-- /columns -->
+</section><!-- /content -->

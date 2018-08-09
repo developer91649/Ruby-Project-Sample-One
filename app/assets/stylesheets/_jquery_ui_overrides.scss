@@ -1,0 +1,94 @@
+.ui-widget-header {
+  background: $gray-lighter;
+  border-width: 0;
+  color: $gray-dark;
+}
+
+.ui-corner-left {
+  border-top-left-radius: $border-radius-base;
+  border-bottom-left-radius: $border-radius-base;
+}
+
+.ui-corner-right {
+  border-top-right-radius: $border-radius-base;
+  border-bottom-right-radius: $border-radius-base;
+}
+
+.ui-corner-all {
+  @extend .ui-corner-left;
+  @extend .ui-corner-right;
+}
+
+// -------------------------------- STATES ---------------------------------- //
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+  background-image: none;
+  @extend .btn-default;
+}
+
+// ------------------------------ DATEPICKER -------------------------------- //
+
+.ui-datepicker-inline {
+  background-color: transparent;
+  border-width: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.ui-datepicker td.ui-state-chosen a {
+  background-image: none;
+  @extend .btn-success;
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+  table {
+    width: 97%
+  }
+
+  &.ui-datepicker-group-first table {
+    margin-left: 0;
+  }
+
+  &.ui-datepicker-group-last table {
+    margin-right: 0;
+  }
+}
+
+.ui-datepicker .ui-datepicker-prev-hover {
+  top: 2px;
+}
+
+.ui-datepicker .ui-datepicker-next-hover {
+  top: 2px;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+  &.ui-state-hover {
+    background: transparent;
+    border-width: 0;
+    cursor: pointer;
+  }
+}
+
+.ui-icon.ui-icon-circle-triangle-e,
+.ui-icon.ui-icon-circle-triangle-w {
+  background: transparent;
+  color: $gray-dark;
+
+  &:before {
+    @extend .glyphicon;
+    display: block;
+    position: absolute;
+    text-indent: 0;
+    left: 0;
+    top: 3px;
+  }
+}
+
+.ui-icon.ui-icon-circle-triangle-w { 
+  @extend .glyphicon-chevron-left;
+}
+
+.ui-icon.ui-icon-circle-triangle-e { 
+  @extend .glyphicon-chevron-right;
+}

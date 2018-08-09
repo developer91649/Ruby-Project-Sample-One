@@ -1,0 +1,14 @@
+Hi <%= @admin.email %>,
+
+A CDS account has been created for <%= @new_user.email %>.
+The account must be approved by you or another administrator before
+the user will have access to the system.
+
+Follow the link below to be taken to the user management console 
+where you can approve the user.
+
+<%= edit_admin_user_url(@new_user) %>.
+
+Very Respectfully,
+
+CDS Support
